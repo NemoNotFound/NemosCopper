@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "nemos_copper:block/copper_detector_rail_on"
+  }
+}

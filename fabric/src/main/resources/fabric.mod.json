@@ -16,12 +16,14 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.example.examplemod.ExampleMod"
+            "com.nemonotfound.nemos.copper.NemosCopperFabric"
+        ],
+        "fabric-datagen": [
+            "com.nemonotfound.nemos.copper.DataGenerator"
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "${mod_id}.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",

@@ -1,0 +1,8 @@
+{
+  "values": [
+    "nemos_copper:copper_rail",
+    "nemos_copper:copper_powered_rail",
+    "nemos_copper:copper_detector_rail",
+    "nemos_copper:copper_activator_rail"
+  ]
+}
