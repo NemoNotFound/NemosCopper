@@ -13,6 +13,6 @@ public class AbstractMinecartMixin {
 
     @ModifyExpressionValue(method = "getRedstoneDirection", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z"))
     private boolean getRedstoneDirection(boolean original, @Local BlockState state) {
-        return original | state.is(ModBlocks.COPPER_POWERED_RAIL.get());
+        return original || state.is(ModBlocks.COPPER_POWERED_RAIL.get());
     }
 }

@@ -18,12 +18,16 @@
         "main": [
             "com.nemonotfound.nemos.copper.NemosCopperFabric"
         ],
+        "client": [
+            "com.nemonotfound.nemos.copper.NemosCopperClientFabric"
+        ],
         "fabric-datagen": [
             "com.nemonotfound.nemos.copper.DataGenerator"
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json"
+        "${mod_id}.mixins.json",
+        "${mod_id}.fabric.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",

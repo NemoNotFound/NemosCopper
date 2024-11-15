@@ -19,6 +19,6 @@ public class ModBlocks {
     public static void init() {}
 
     private static Supplier<Block> register(String id, Function<BlockBehaviour.Properties, Block> block, BlockBehaviour.Properties properties) {
-        return NemosCopperCommon.REGISTER_HELPER.registerBlock(id, block, properties);
+        return NemosCopperCommon.REGISTRY_HELPER.registerBlock(id, block, properties);
     }
 }

@@ -1,5 +1,6 @@
 package com.nemonotfound.nemos.copper;
 
+import com.nemonotfound.nemos.copper.datagen.ModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
