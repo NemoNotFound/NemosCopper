@@ -1,8 +1,13 @@
 {
   "block.nemos_copper.copper_activator_rail": "Copper Activator Rail",
+  "block.nemos_copper.copper_axe": "Copper Axe",
   "block.nemos_copper.copper_detector_rail": "Copper Detector Rail",
+  "block.nemos_copper.copper_hoe": "Copper Hoe",
+  "block.nemos_copper.copper_pickaxe": "Copper Pickaxe",
   "block.nemos_copper.copper_powered_rail": "Copper Powered Rail",
   "block.nemos_copper.copper_rail": "Copper Rail",
+  "block.nemos_copper.copper_shovel": "Copper Shovel",
+  "block.nemos_copper.copper_sword": "Copper Sword",
   "entity.nemos_copper.copper_chest_minecart": "Copper Minecart with Chest",
   "entity.nemos_copper.copper_command_block_minecart": "Copper Minecart with Command Block",
   "entity.nemos_copper.copper_furnace_minecart": "Copper Minecart with Furnace",

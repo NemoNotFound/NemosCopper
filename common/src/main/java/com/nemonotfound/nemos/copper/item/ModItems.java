@@ -23,6 +23,11 @@ public class ModItems {
     public static Supplier<Item> COPPER_HOPPER_MINECART = register("copper_hopper_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_HOPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_COMMAND_BLOCK_MINECART = register("copper_command_block_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), properties), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
     public static Supplier<Item> COPPER_SHEARS = register("copper_shears", ShearsItem::new, () -> new Item.Properties().durability(188).component(DataComponents.TOOL, ShearsItem.createToolProperties()));
+    public static final Supplier<Item> COPPER_SWORD = register("copper_sword", properties -> new SwordItem(ModToolMaterial.COPPER, 3.0F, -2.4F, properties));
+    public static final Supplier<Item> COPPER_SHOVEL = register("copper_shovel", properties -> new ShovelItem(ModToolMaterial.COPPER, 1.5F, -3.0F, properties));
+    public static final Supplier<Item> COPPER_PICKAXE = register("copper_pickaxe", properties -> new PickaxeItem(ModToolMaterial.COPPER, 1.0F, -2.8F, properties));
+    public static final Supplier<Item> COPPER_AXE = register("copper_axe", properties -> new AxeItem(ModToolMaterial.COPPER, 6.5F, -3.15F, properties));
+    public static final Supplier<Item> COPPER_HOE = register("copper_hoe", properties -> new HoeItem(ModToolMaterial.COPPER, -1.5F, -1.5F, properties));
 
     public static void init() {}
 

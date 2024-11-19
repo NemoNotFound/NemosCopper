@@ -2,6 +2,7 @@ package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.item.ModItems;
+import com.nemonotfound.nemos.copper.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
@@ -100,6 +101,51 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" #")
                         .pattern("# ")
                         .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SWORD.get())
+                        .define('#', Items.STICK)
+                        .define('X', ModItemTags.COPPER_TOOL_MATERIALS)
+                        .pattern("X")
+                        .pattern("X")
+                        .pattern("#")
+                        .unlockedBy("has_copper_ingot", this.has(ModItemTags.COPPER_TOOL_MATERIALS))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.TOOLS, ModItems.COPPER_HOE.get())
+                        .define('#', Items.STICK)
+                        .define('X', ModItemTags.COPPER_TOOL_MATERIALS)
+                        .pattern("XX")
+                        .pattern(" #")
+                        .pattern(" #")
+                        .unlockedBy("has_copper_ingot", this.has(ModItemTags.COPPER_TOOL_MATERIALS))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.TOOLS, ModItems.COPPER_PICKAXE.get())
+                        .define('#', Items.STICK)
+                        .define('X', ModItemTags.COPPER_TOOL_MATERIALS)
+                        .pattern("XXX")
+                        .pattern(" # ")
+                        .pattern(" # ")
+                        .unlockedBy("has_copper_ingot", this.has(ModItemTags.COPPER_TOOL_MATERIALS))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.TOOLS, ModItems.COPPER_AXE.get())
+                        .define('#', Items.STICK)
+                        .define('X', ModItemTags.COPPER_TOOL_MATERIALS)
+                        .pattern("XX")
+                        .pattern("X#")
+                        .pattern(" #")
+                        .unlockedBy("has_copper_ingot", this.has(ModItemTags.COPPER_TOOL_MATERIALS))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.TOOLS, ModItems.COPPER_SHOVEL.get())
+                        .define('#', Items.STICK)
+                        .define('X', ModItemTags.COPPER_TOOL_MATERIALS)
+                        .pattern("X")
+                        .pattern("#")
+                        .pattern("#")
+                        .unlockedBy("has_copper_ingot", this.has(ModItemTags.COPPER_TOOL_MATERIALS))
                         .save(this.output);
             }
         };
