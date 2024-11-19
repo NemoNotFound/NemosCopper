@@ -3,10 +3,8 @@ package com.nemonotfound.nemos.copper.item;
 import com.nemonotfound.nemos.copper.NemosCopperCommon;
 import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.entities.ModEntityTypes;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.MinecartItem;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.*;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -24,7 +22,7 @@ public class ModItems {
     public static Supplier<Item> COPPER_TNT_MINECART = register("copper_tnt_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_TNT_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_HOPPER_MINECART = register("copper_hopper_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_HOPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_COMMAND_BLOCK_MINECART = register("copper_command_block_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), properties), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
-    //public static Supplier<Item> COPPER_SHEARS = register("copper_shears", ShearsItem::new, new Item.Properties().durability(188).component(DataComponents.TOOL, ShearsItem.createToolProperties()));
+    public static Supplier<Item> COPPER_SHEARS = register("copper_shears", ShearsItem::new, () -> new Item.Properties().durability(188).component(DataComponents.TOOL, ShearsItem.createToolProperties()));
 
     public static void init() {}
 
@@ -33,6 +31,10 @@ public class ModItems {
     }
 
     private static Supplier<Item> register(String id, Function<Item.Properties, Item> function, Item.Properties properties) {
+        return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, function, properties);
+    }
+
+    private static Supplier<Item> register(String id, Function<Item.Properties, Item> function, Supplier<Item.Properties> properties) {
         return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, function, properties);
     }
 }

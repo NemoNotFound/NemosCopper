@@ -18,6 +18,10 @@ base {
 
 fabricApi {
     configureDataGeneration()
+
+//    configureDataGeneration {
+//        setOutputDirectory(project.project(':common').file('src/generated/resources/'))
+//    }
 }
 
 loom {

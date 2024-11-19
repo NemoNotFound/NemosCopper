@@ -24,7 +24,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.COPPER_CHEST_MINECART.get());
                 output.accept(ModItems.COPPER_FURNACE_MINECART.get());
                 output.accept(ModItems.COPPER_TNT_MINECART.get());
-                //output.accept(ModItems.COPPER_SHEARS.get());
+                output.accept(ModItems.COPPER_SHEARS.get());
             })
             .build());
 

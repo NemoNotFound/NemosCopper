@@ -7,7 +7,11 @@
   "mixins": [
     "AbstractMinecartMixin",
     "NewMinecartBehaviourMixin",
-    "OldMinecartBehaviourMixin"
+    "OldMinecartBehaviourMixin",
+    "SnowGolemMixin",
+    "BoggedMixin",
+    "SheepMixin",
+    "MushroomCowMixin"
   ],
   "client": [],
   "server": [],

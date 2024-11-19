@@ -1,5 +1,4 @@
-# Changelog v1.0
+# Changelog v1.1
 
 ## Additions
-- Added Copper Rails
-- Added Copper Minecarts
+- Added Copper Shears

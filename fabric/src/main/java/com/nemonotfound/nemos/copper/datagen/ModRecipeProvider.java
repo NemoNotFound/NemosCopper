@@ -95,12 +95,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy("has_copper_minecart", this.has(ModItems.COPPER_MINECART.get()))
                         .save(this.output);
 
-//                this.shaped(RecipeCategory.TOOLS, ModItems.COPPER_SHEARS.get())
-//                        .define('#', Items.COPPER_INGOT)
-//                        .pattern(" #")
-//                        .pattern("# ")
-//                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
-//                        .save(this.output);
+                this.shaped(RecipeCategory.TOOLS, ModItems.COPPER_SHEARS.get())
+                        .define('#', Items.COPPER_INGOT)
+                        .pattern(" #")
+                        .pattern("# ")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
             }
         };
     }

@@ -35,6 +35,6 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), "Copper Minecart with Command Block");
         translationBuilder.add(ModEntityTypes.COPPER_SPAWNER_MINECART.get(), "Copper Minecart with Monster Spawner");
         translationBuilder.add("itemGroup.nemos_copper", "Nemo's Copper");
-        //translationBuilder.add(ModItems.COPPER_SHEARS.get(), "Copper Shears");
+        translationBuilder.add(ModItems.COPPER_SHEARS.get(), "Copper Shears");
     }
 }

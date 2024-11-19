@@ -29,6 +29,11 @@ public class RegistryHelperFabric implements RegistryHelper {
     }
 
     @Override
+    public Supplier<Item> registerItem(String id, Function<Item.Properties, Item> function, Supplier<Item.Properties> properties) {
+        return  registerSupplierWithResourceKey(BuiltInRegistries.ITEM, id, key -> function.apply(properties.get().setId(key)));
+    }
+
+    @Override
     public <T extends Entity> Supplier<EntityType<T>> registerEntity(String id, Supplier<EntityType<T>> entity) {
         return registerSupplier(BuiltInRegistries.ENTITY_TYPE, id, entity);
     }

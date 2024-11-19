@@ -29,6 +29,11 @@ public class RegistryHelperNeoForge implements RegistryHelper {
     }
 
     @Override
+    public Supplier<Item> registerItem(String id, Function<Item.Properties, Item> function, Supplier<Item.Properties> properties) {
+        return NemosCopperNeoForge.ITEMS.register(id, () -> function.apply(properties.get().setId(createResourceKey(Registries.ITEM, id))));
+    }
+
+    @Override
     public <T extends Entity> Supplier<EntityType<T>> registerEntity(String id, Supplier<EntityType<T>> entity) {
         return NemosCopperNeoForge.ENTITIES.register(id, entity);
     }
