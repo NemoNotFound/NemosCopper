@@ -3,6 +3,7 @@ package com.nemonotfound.nemos.copper;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
@@ -18,6 +19,7 @@ public class NemosCopperNeoForge {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MOD_ID);
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
     public NemosCopperNeoForge(IEventBus eventBus) {
         NemosCopperCommon.init();
@@ -25,5 +27,6 @@ public class NemosCopperNeoForge {
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
         ENTITIES.register(eventBus);
+        CREATIVE_TABS.register(eventBus);
     }
 }

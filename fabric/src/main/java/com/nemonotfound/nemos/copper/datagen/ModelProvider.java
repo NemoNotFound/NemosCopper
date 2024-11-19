@@ -45,6 +45,7 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.COPPER_FURNACE_MINECART.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_HOPPER_MINECART.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_TNT_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        //itemModelGenerator.generateFlatItem(ModItems.COPPER_SHEARS.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private void createPassiveRail(BlockModelGenerators blockModelGenerators, Block railBlock) {
@@ -111,29 +112,23 @@ public class ModelProvider extends FabricModelProvider {
         ResourceLocation resourcelocation5 = this.createSuffixedVariant(blockModelGenerators, railBlock, "_on", ModelTemplates.RAIL_RAISED_SW, TextureMapping::rail);
         PropertyDispatch propertydispatch = PropertyDispatch.properties(BlockStateProperties.POWERED, BlockStateProperties.RAIL_SHAPE_STRAIGHT)
                 .generate(
-                        (p_176166_, p_176167_) -> {
-                            switch (p_176167_) {
-                                case NORTH_SOUTH:
-                                    return Variant.variant().with(VariantProperties.MODEL, p_176166_ ? resourcelocation3 : resourcelocation);
-                                case EAST_WEST:
-                                    return Variant.variant()
-                                            .with(VariantProperties.MODEL, p_176166_ ? resourcelocation3 : resourcelocation)
-                                            .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90);
-                                case ASCENDING_EAST:
-                                    return Variant.variant()
-                                            .with(VariantProperties.MODEL, p_176166_ ? resourcelocation4 : resourcelocation1)
-                                            .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90);
-                                case ASCENDING_WEST:
-                                    return Variant.variant()
-                                            .with(VariantProperties.MODEL, p_176166_ ? resourcelocation5 : resourcelocation2)
-                                            .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90);
-                                case ASCENDING_NORTH:
-                                    return Variant.variant().with(VariantProperties.MODEL, p_176166_ ? resourcelocation4 : resourcelocation1);
-                                case ASCENDING_SOUTH:
-                                    return Variant.variant().with(VariantProperties.MODEL, p_176166_ ? resourcelocation5 : resourcelocation2);
-                                default:
-                                    throw new UnsupportedOperationException("Fix you generator!");
-                            }
+                        (p_176166_, p_176167_) -> switch (p_176167_) {
+                            case NORTH_SOUTH ->
+                                    Variant.variant().with(VariantProperties.MODEL, p_176166_ ? resourcelocation3 : resourcelocation);
+                            case EAST_WEST -> Variant.variant()
+                                    .with(VariantProperties.MODEL, p_176166_ ? resourcelocation3 : resourcelocation)
+                                    .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90);
+                            case ASCENDING_EAST -> Variant.variant()
+                                    .with(VariantProperties.MODEL, p_176166_ ? resourcelocation4 : resourcelocation1)
+                                    .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90);
+                            case ASCENDING_WEST -> Variant.variant()
+                                    .with(VariantProperties.MODEL, p_176166_ ? resourcelocation5 : resourcelocation2)
+                                    .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90);
+                            case ASCENDING_NORTH ->
+                                    Variant.variant().with(VariantProperties.MODEL, p_176166_ ? resourcelocation4 : resourcelocation1);
+                            case ASCENDING_SOUTH ->
+                                    Variant.variant().with(VariantProperties.MODEL, p_176166_ ? resourcelocation5 : resourcelocation2);
+                            default -> throw new UnsupportedOperationException("Fix you generator!");
                         }
                 );
         this.createSimpleFlatItemModel(blockModelGenerators, railBlock);

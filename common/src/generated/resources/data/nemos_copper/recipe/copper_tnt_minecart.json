@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:tnt",
+    "nemos_copper:copper_minecart"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nemos_copper:copper_tnt_minecart"
+  }
+}

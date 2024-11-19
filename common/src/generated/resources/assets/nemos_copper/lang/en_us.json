@@ -1,0 +1,20 @@
+{
+  "block.nemos_copper.copper_activator_rail": "Copper Activator Rail",
+  "block.nemos_copper.copper_detector_rail": "Copper Detector Rail",
+  "block.nemos_copper.copper_powered_rail": "Copper Powered Rail",
+  "block.nemos_copper.copper_rail": "Copper Rail",
+  "entity.nemos_copper.copper_chest_minecart": "Copper Minecart with Chest",
+  "entity.nemos_copper.copper_command_block_minecart": "Copper Minecart with Command Block",
+  "entity.nemos_copper.copper_furnace_minecart": "Copper Minecart with Furnace",
+  "entity.nemos_copper.copper_hopper_minecart": "Copper Minecart with Hopper",
+  "entity.nemos_copper.copper_minecart": "Copper Minecart",
+  "entity.nemos_copper.copper_spawner_minecart": "Copper Minecart with Monster Spawner",
+  "entity.nemos_copper.copper_tnt_minecart": "Copper Minecart with TNT",
+  "item.nemos_copper.copper_chest_minecart": "Copper Minecart with Chest",
+  "item.nemos_copper.copper_command_block_minecart": "Copper Minecart with Command Block",
+  "item.nemos_copper.copper_furnace_minecart": "Copper Minecart with Furnace",
+  "item.nemos_copper.copper_hopper_minecart": "Copper Minecart with Hopper",
+  "item.nemos_copper.copper_minecart": "Copper Minecart",
+  "item.nemos_copper.copper_tnt_minecart": "Copper Minecart with TNT",
+  "itemGroup.nemos_copper": "Nemo's Copper"
+}

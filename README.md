@@ -2,6 +2,7 @@
 <br><br>
 
 # Description
+Nemo's Copper adds more blocks and items out of copper!
 <br>
 
 [![Join my Discord](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true)](https://discord.com/invite/yxs9dga)

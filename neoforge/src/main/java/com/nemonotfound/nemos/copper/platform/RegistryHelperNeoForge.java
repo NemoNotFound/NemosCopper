@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -30,6 +31,16 @@ public class RegistryHelperNeoForge implements RegistryHelper {
     @Override
     public <T extends Entity> Supplier<EntityType<T>> registerEntity(String id, Supplier<EntityType<T>> entity) {
         return NemosCopperNeoForge.ENTITIES.register(id, entity);
+    }
+
+    @Override
+    public <T extends CreativeModeTab> Supplier<T> registerCreativeModeTab(String id, Supplier<T> creativeModeTab) {
+        return NemosCopperNeoForge.CREATIVE_TABS.register(id, creativeModeTab);
+    }
+
+    @Override
+    public CreativeModeTab.Builder createCreativeModeTab() {
+        return CreativeModeTab.builder();
     }
 
     private static <T> ResourceKey<T> createResourceKey(ResourceKey<Registry<T>> registryResourceKey, String id) {

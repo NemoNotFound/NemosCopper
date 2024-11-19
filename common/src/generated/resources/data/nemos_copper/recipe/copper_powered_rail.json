@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:stick",
+    "C": "minecraft:copper_ingot",
+    "R": "minecraft:redstone",
+    "X": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    "X X",
+    "C#C",
+    "XRX"
+  ],
+  "result": {
+    "count": 6,
+    "id": "nemos_copper:copper_powered_rail"
+  }
+}
