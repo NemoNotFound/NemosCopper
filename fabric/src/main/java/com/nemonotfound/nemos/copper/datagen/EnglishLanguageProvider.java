@@ -41,5 +41,9 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.COPPER_SHOVEL.get(), "Copper Shovel");
         translationBuilder.add(ModItems.COPPER_SWORD.get(), "Copper Sword");
         translationBuilder.add(ModItems.COPPER_HOE.get(), "Copper Hoe");
+        translationBuilder.add(ModItems.COPPER_HELMET.get(), "Copper Helmet");
+        translationBuilder.add(ModItems.COPPER_CHESTPLATE.get(), "Copper Chestplate");
+        translationBuilder.add(ModItems.COPPER_LEGGINGS.get(), "Copper Leggings");
+        translationBuilder.add(ModItems.COPPER_BOOTS.get(), "Copper Boots");
     }
 }

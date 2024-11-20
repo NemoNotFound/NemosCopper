@@ -28,7 +28,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import static com.nemonotfound.nemos.copper.Constants.MOD_ID;
 
 @Mod(MOD_ID)
-@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NemosCopperForge {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MOD_ID);
@@ -47,7 +46,7 @@ public class NemosCopperForge {
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    private static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
+    public static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> DispenserBlock.registerBehavior(ModItems.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
     }
 

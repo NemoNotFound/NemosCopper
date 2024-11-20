@@ -1,9 +1,6 @@
 package com.nemonotfound.nemos.copper;
 
-import com.nemonotfound.nemos.copper.datagen.EnglishLanguageProvider;
-import com.nemonotfound.nemos.copper.datagen.ModBlockLootTableProvider;
-import com.nemonotfound.nemos.copper.datagen.ModRecipeProvider;
-import com.nemonotfound.nemos.copper.datagen.ModelProvider;
+import com.nemonotfound.nemos.copper.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -17,5 +14,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(EnglishLanguageProvider::new);
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModBlockLootTableProvider::new);
+        pack.addProvider(ModItemTagProvider::new);
+        pack.addProvider(ModBlockTagProvider::new);
     }
 }

@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": "minecraft:stick",
-    "X": "#nemos_copper:copper_tool_materials.json"
+    "X": "#nemos_copper:copper_tool_materials"
   },
   "pattern": [
     "XX",

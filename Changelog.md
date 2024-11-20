@@ -7,3 +7,4 @@
 - Added Copper Axe
 - Added Copper Hoe
 - Added Copper Sword
+- Added Copper Armor

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#nemos_copper:copper_tool_materials.json"
+            "items": "#nemos_copper:copper_tool_materials"
           }
         ]
       },

@@ -15,13 +15,17 @@ import net.minecraft.data.models.model.ModelTemplate;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.equipment.EquipmentModel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.RailShape;
 
 import java.util.function.Function;
+
+import static com.nemonotfound.nemos.copper.Constants.MOD_ID;
 
 public class ModelProvider extends FabricModelProvider {
 
@@ -46,11 +50,20 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.COPPER_HOPPER_MINECART.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_TNT_MINECART.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_SHEARS.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.COPPER_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.COPPER_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.COPPER_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.COPPER_AXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.COPPER_HOE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.COPPER_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.COPPER_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.COPPER_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.COPPER_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.COPPER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerator.generateArmorTrims(ModItems.COPPER_HELMET.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_helmet"), onlyHumanoid("copper"), EquipmentSlot.HEAD);
+        itemModelGenerator.generateArmorTrims(ModItems.COPPER_CHESTPLATE.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_chestplate"), onlyHumanoid("copper"), EquipmentSlot.CHEST);
+        itemModelGenerator.generateArmorTrims(ModItems.COPPER_LEGGINGS.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_leggings"), onlyHumanoid("copper"), EquipmentSlot.LEGS);
+        itemModelGenerator.generateArmorTrims(ModItems.COPPER_BOOTS.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_boots"), onlyHumanoid("copper"), EquipmentSlot.FEET);
+    }
+
+    private static EquipmentModel onlyHumanoid(String string) {
+        return EquipmentModel.builder().addHumanoidLayers(ResourceLocation.fromNamespaceAndPath(MOD_ID, string)).build();
     }
 
     private void createPassiveRail(BlockModelGenerators blockModelGenerators, Block railBlock) {
