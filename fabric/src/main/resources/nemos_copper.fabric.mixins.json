@@ -11,7 +11,8 @@
     "SnowGolemMixin",
     "BoggedMixin",
     "SheepMixin",
-    "MushroomCowMixin"
+    "MushroomCowMixin",
+    "BeehiveBlockMixin"
   ],
   "client": [],
   "server": [],

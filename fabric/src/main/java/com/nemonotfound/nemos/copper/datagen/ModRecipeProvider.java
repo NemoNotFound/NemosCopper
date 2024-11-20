@@ -147,6 +147,36 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("#")
                         .unlockedBy("has_copper_ingot", this.has(ModItemTags.COPPER_TOOL_MATERIALS))
                         .save(this.output);
+
+                this.shaped(RecipeCategory.COMBAT, ModItems.COPPER_HELMET.get())
+                        .define('X', Items.COPPER_INGOT)
+                        .pattern("XXX")
+                        .pattern("X X")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.COMBAT, ModItems.COPPER_BOOTS.get())
+                        .define('X', Items.COPPER_INGOT)
+                        .pattern("X X")
+                        .pattern("X X")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.COMBAT, ModItems.COPPER_CHESTPLATE.get())
+                        .define('X', Items.COPPER_INGOT)
+                        .pattern("X X")
+                        .pattern("XXX")
+                        .pattern("XXX")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.COMBAT, ModItems.COPPER_LEGGINGS.get())
+                        .define('X', Items.COPPER_INGOT)
+                        .pattern("XXX")
+                        .pattern("X X")
+                        .pattern("X X")
+                        .unlockedBy("has_iron_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
             }
         };
     }
