@@ -2,16 +2,12 @@ package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.item.ModItems;
+import com.nemonotfound.nemos.copper.item.equipment.ModEquipmentAssets;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.equipment.EquipmentModel;
-
-import static com.nemonotfound.nemos.copper.Constants.MOD_ID;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 
 public class ModelProvider extends FabricModelProvider {
 
@@ -42,13 +38,9 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.COPPER_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModelGenerator.generateArmorTrims(ModItems.COPPER_HELMET.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_helmet"), onlyHumanoid("copper"), EquipmentSlot.HEAD);
-        itemModelGenerator.generateArmorTrims(ModItems.COPPER_CHESTPLATE.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_chestplate"), onlyHumanoid("copper"), EquipmentSlot.CHEST);
-        itemModelGenerator.generateArmorTrims(ModItems.COPPER_LEGGINGS.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_leggings"), onlyHumanoid("copper"), EquipmentSlot.LEGS);
-        itemModelGenerator.generateArmorTrims(ModItems.COPPER_BOOTS.get(), ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_boots"), onlyHumanoid("copper"), EquipmentSlot.FEET);
-    }
-
-    private static EquipmentModel onlyHumanoid(String string) {
-        return EquipmentModel.builder().addHumanoidLayers(ResourceLocation.fromNamespaceAndPath(MOD_ID, string)).build();
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_HELMET.get(), ModEquipmentAssets.COPPER, "helmet", false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, "chestplate", false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_LEGGINGS.get(), ModEquipmentAssets.COPPER, "leggings", false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_BOOTS.get(), ModEquipmentAssets.COPPER, "boots", false);
     }
 }

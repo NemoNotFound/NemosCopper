@@ -35,7 +35,6 @@ loom {
             ideConfigGenerated(true)
             runDir('runs/client')
         }
-
         server {
             server()
             setConfigName('Fabric Server')
@@ -44,7 +43,7 @@ loom {
         }
 
         datagen {
-            inherit server
+            inherit client
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${project(':common').file('src/generated/resources/')}"
