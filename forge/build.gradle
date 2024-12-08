@@ -13,6 +13,16 @@ mixin {
     config("${mod_id}.forge.mixins.json")
 }
 
+tasks.named("assemble").configure {
+    dependsOn("jarJar")
+}
+
+jar {
+    manifest {
+        attributes["MixinConfigs"] = "${mod_id}.mixins.json, ${mod_id}.forge.mixins.json"
+    }
+}
+
 minecraft {
     mappings channel: 'official', version: minecraft_version
 
