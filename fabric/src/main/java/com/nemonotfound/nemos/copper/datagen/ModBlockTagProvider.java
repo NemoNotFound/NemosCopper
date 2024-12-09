@@ -1,6 +1,7 @@
 package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
+import com.nemonotfound.nemos.copper.tag.ModBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -21,5 +22,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COPPER_ACTIVATOR_RAIL.get())
                 .add(ModBlocks.COPPER_DETECTOR_RAIL.get())
                 .add(ModBlocks.COPPER_POWERED_RAIL.get());
+
+        getOrCreateTagBuilder(ModBlockTags.INCORRECT_FOR_COPPER_TOOL)
+                .forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .forceAddTag(BlockTags.NEEDS_IRON_TOOL);
     }
 }
