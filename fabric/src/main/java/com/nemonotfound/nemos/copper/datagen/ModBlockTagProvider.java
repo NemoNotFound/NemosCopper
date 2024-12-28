@@ -26,5 +26,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(ModBlockTags.INCORRECT_FOR_COPPER_TOOL)
                 .forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .forceAddTag(BlockTags.NEEDS_IRON_TOOL);
+
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.COPPER_LANTERN.get())
+                .add(ModBlocks.COPPER_SOUL_LANTERN.get())
+                .add(ModBlocks.COPPER_CHAIN.get());
+
     }
 }

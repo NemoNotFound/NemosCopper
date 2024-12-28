@@ -22,7 +22,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput output) {
+    protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput output) {
         return new RecipeProvider(registryLookup, output) {
 
             @Override
@@ -176,6 +176,44 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("X X")
                         .pattern("X X")
                         .unlockedBy("has_iron_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.nineBlockStorageRecipesWithCustomPacking(
+                        RecipeCategory.MISC,
+                        ModItems.COPPER_NUGGET.get(),
+                        RecipeCategory.MISC,
+                        Items.COPPER_INGOT,
+                        "copper_ingot_from_nuggets",
+                        "copper_ingot"
+                );
+
+                this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_LANTERN.get())
+                        .define('#', Items.TORCH)
+                        .define('X', ModItems.COPPER_NUGGET.get())
+                        .pattern("XXX")
+                        .pattern("X#X")
+                        .pattern("XXX")
+                        .unlockedBy("has_copper_nugget", this.has(ModItems.COPPER_NUGGET.get()))
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_SOUL_LANTERN.get())
+                        .define('#', Items.SOUL_TORCH)
+                        .define('X', ModItems.COPPER_NUGGET.get())
+                        .pattern("XXX")
+                        .pattern("X#X")
+                        .pattern("XXX")
+                        .unlockedBy("has_soul_torch", this.has(Items.SOUL_TORCH))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_CHAIN.get())
+                        .define('C', Items.COPPER_INGOT)
+                        .define('N', ModItems.COPPER_NUGGET.get())
+                        .pattern("N")
+                        .pattern("C")
+                        .pattern("N")
+                        .unlockedBy("has_copper_nugget", this.has(ModItems.COPPER_NUGGET.get()))
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
                         .save(this.output);
             }
         };

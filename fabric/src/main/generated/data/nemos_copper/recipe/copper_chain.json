@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "N": "nemos_copper:copper_nugget"
+  },
+  "pattern": [
+    "N",
+    "C",
+    "N"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nemos_copper:copper_chain"
+  }
+}

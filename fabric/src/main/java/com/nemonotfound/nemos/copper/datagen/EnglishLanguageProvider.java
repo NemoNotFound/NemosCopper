@@ -17,6 +17,9 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
+        translationBuilder.add(ModBlocks.COPPER_CHAIN.get(), "Copper Chain");
+        translationBuilder.add(ModBlocks.COPPER_LANTERN.get(), "Copper Lantern");
+        translationBuilder.add(ModBlocks.COPPER_SOUL_LANTERN.get(), "Copper Soul Lantern");
         translationBuilder.add(ModBlocks.COPPER_RAIL.get(), "Copper Rail");
         translationBuilder.add(ModBlocks.COPPER_ACTIVATOR_RAIL.get(), "Copper Activator Rail");
         translationBuilder.add(ModBlocks.COPPER_DETECTOR_RAIL.get(), "Copper Detector Rail");
@@ -45,5 +48,6 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.COPPER_CHESTPLATE.get(), "Copper Chestplate");
         translationBuilder.add(ModItems.COPPER_LEGGINGS.get(), "Copper Leggings");
         translationBuilder.add(ModItems.COPPER_BOOTS.get(), "Copper Boots");
+        translationBuilder.add(ModItems.COPPER_NUGGET.get(), "Copper Nugget");
     }
 }

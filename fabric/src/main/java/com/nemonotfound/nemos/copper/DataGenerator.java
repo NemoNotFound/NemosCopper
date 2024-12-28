@@ -11,6 +11,8 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
         pack.addProvider(ModelProvider::new);
+        pack.addProvider(GermanLanguageProvider::new);
+        pack.addProvider(BrazilianPortugueseLanguageProvider::new);
         pack.addProvider(EnglishLanguageProvider::new);
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModBlockLootTableProvider::new);

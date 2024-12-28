@@ -17,7 +17,6 @@ public class ModItems {
     public static Supplier<Item> COPPER_ACTIVATOR_RAIL = registerBlockItem("copper_activator_rail", properties -> new BlockItem(ModBlocks.COPPER_ACTIVATOR_RAIL.get(), properties));
     public static Supplier<Item> COPPER_DETECTOR_RAIL = registerBlockItem("copper_detector_rail", properties -> new BlockItem(ModBlocks.COPPER_DETECTOR_RAIL.get(), properties));
     public static Supplier<Item> COPPER_POWERED_RAIL = registerBlockItem("copper_powered_rail", properties -> new BlockItem(ModBlocks.COPPER_POWERED_RAIL.get(), properties));
-    //TODO: Fix NullPointer for Forge
     public static Supplier<Item> COPPER_MINECART = register("copper_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_CHEST_MINECART = register("copper_chest_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_CHEST_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_FURNACE_MINECART = register("copper_furnace_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_FURNACE_MINECART.get(), properties), new Item.Properties().stacksTo(1));
@@ -34,6 +33,10 @@ public class ModItems {
     public static final Supplier<Item> COPPER_CHESTPLATE = register("copper_chestplate", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.CHESTPLATE, properties));
     public static final Supplier<Item> COPPER_LEGGINGS = register("copper_leggings", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.LEGGINGS, properties));
     public static final Supplier<Item> COPPER_BOOTS = register("copper_boots", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.BOOTS, properties));
+    public static final Supplier<Item> COPPER_LANTERN = registerBlockItem("copper_lantern", properties -> new BlockItem(ModBlocks.COPPER_LANTERN.get(), properties));
+    public static final Supplier<Item> COPPER_SOUL_LANTERN = registerBlockItem("copper_soul_lantern", properties -> new BlockItem(ModBlocks.COPPER_SOUL_LANTERN.get(), properties));
+    public static final Supplier<Item> COPPER_NUGGET = register("copper_nugget", Item::new);
+    public static final Supplier<Item> COPPER_CHAIN = registerBlockItem("copper_chain", properties -> new BlockItem(ModBlocks.COPPER_CHAIN.get(), properties));
 
     public static void init() {}
 
