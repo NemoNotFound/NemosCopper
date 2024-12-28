@@ -1,9 +1,0 @@
-// 1.21.3	2024-11-20T20:06:00.1181589	Nemo's Copper/Tags for minecraft:item
-1e8ecd0147bcdaf41a8c90f49f72d5ea60ee5888 data\minecraft\tags\item\pickaxes.json
-6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data\nemos_copper\tags\item\copper_tool_materials.json
-ce311e999623e108453e55616e259388363b4655 data\minecraft\tags\item\trimmable_armor.json
-c890cd8e7d3bb6969478c1455f274ddeb987a871 data\minecraft\tags\item\shovels.json
-1a185c431200b9703bedc44f238c3c838f2059d7 data\minecraft\tags\item\swords.json
-fecc2b743e544d0e8536d634278a805360dfbf67 data\minecraft\tags\item\hoes.json
-31c8a8b82a21f11d15e57334c8261d557ecb3b76 data\minecraft\tags\item\axes.json
-6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data\nemos_copper\tags\item\repairs_copper_armor.json
