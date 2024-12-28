@@ -1,5 +1,7 @@
 {
   "values": [
-    "nemos_copper:copper_lantern"
+    "nemos_copper:copper_lantern",
+    "nemos_copper:copper_soul_lantern",
+    "nemos_copper:copper_chain"
   ]
 }
