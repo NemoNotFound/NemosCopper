@@ -1,4 +1,11 @@
-# Changelog v1.1.1
+# Changelog v1.2
 
-## Changes
-- Copper tool material uses its own tag now, to avoid issues with mod compatibility
+## Additions
+- Added copper lantern
+- Added copper soul lantern
+- Added copper nugget
+- Added copper chain
+- Added brazilian portuguese translation
+
+## Fixes
+- Copper rails don't drop when broken

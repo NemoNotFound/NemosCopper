@@ -1,3 +1,4 @@
-// 1.21.4	2024-12-09T17:01:12.780287	Nemo's Copper/Tags for minecraft:block
+// 1.21.4	2024-12-28T17:00:19.831344	Nemo's Copper/Tags for minecraft:block
 ef8b53a5070a43fe7b9c6aa14d13e5b64c516aae data/nemos_copper/tags/block/incorrect_for_copper_tool.json
+18f43184e1c1a8376e7e90e81f5c1b698de23eb3 data/minecraft/tags/block/mineable/pickaxe.json
 a2b31d2ebfdc40946cd1f801a01688fd59d28b93 data/minecraft/tags/block/rails.json

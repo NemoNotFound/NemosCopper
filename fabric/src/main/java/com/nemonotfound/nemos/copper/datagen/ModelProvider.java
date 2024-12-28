@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 
 public class ModelProvider extends FabricModelProvider {
@@ -21,6 +22,10 @@ public class ModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createActiveRail(ModBlocks.COPPER_POWERED_RAIL.get());
         blockStateModelGenerator.createActiveRail(ModBlocks.COPPER_DETECTOR_RAIL.get());
         blockStateModelGenerator.createActiveRail(ModBlocks.COPPER_ACTIVATOR_RAIL.get());
+        blockStateModelGenerator.createLantern(ModBlocks.COPPER_LANTERN.get());
+        blockStateModelGenerator.createLantern(ModBlocks.COPPER_SOUL_LANTERN.get());
+        blockStateModelGenerator.createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_CHAIN.get(), ModelLocationUtils.getModelLocation(ModBlocks.COPPER_CHAIN.get()));
+        blockStateModelGenerator.registerSimpleFlatItemModel(ModItems.COPPER_CHAIN.get());
     }
 
     @Override
@@ -37,6 +42,7 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.COPPER_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COPPER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.COPPER_NUGGET.get(), ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateTrimmableItem(ModItems.COPPER_HELMET.get(), ModEquipmentAssets.COPPER, "helmet", false);
         itemModelGenerator.generateTrimmableItem(ModItems.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, "chestplate", false);

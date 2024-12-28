@@ -15,6 +15,9 @@ public class ModCreativeModeTabs {
             .title(Component.translatable("itemGroup." + MOD_ID))
             .icon(() -> new ItemStack(ModItems.COPPER_MINECART.get()))
             .displayItems((parameters, output) -> {
+                output.accept(ModItems.COPPER_CHAIN.get());
+                output.accept(ModItems.COPPER_LANTERN.get());
+                output.accept(ModItems.COPPER_SOUL_LANTERN.get());
                 output.accept(ModItems.COPPER_RAIL.get());
                 output.accept(ModItems.COPPER_POWERED_RAIL.get());
                 output.accept(ModItems.COPPER_DETECTOR_RAIL.get());
@@ -34,6 +37,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.COPPER_CHESTPLATE.get());
                 output.accept(ModItems.COPPER_LEGGINGS.get());
                 output.accept(ModItems.COPPER_BOOTS.get());
+                output.accept(ModItems.COPPER_NUGGET.get());
             })
             .build());
 

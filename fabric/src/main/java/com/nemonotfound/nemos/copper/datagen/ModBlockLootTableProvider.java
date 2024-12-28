@@ -1,5 +1,6 @@
 package com.nemonotfound.nemos.copper.datagen;
 
+import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -33,7 +34,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         this.add(Blocks.JUNGLE_LEAVES, block -> this.createLeavesDrops(block, Blocks.JUNGLE_SAPLING, JUNGLE_LEAVES_SAPLING_CHANGES));
         this.add(Blocks.ACACIA_LEAVES, block -> this.createLeavesDrops(block, Blocks.ACACIA_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(Blocks.DARK_OAK_LEAVES, block -> this.createOakLeavesDrops(block, Blocks.DARK_OAK_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
-        //this.add(Blocks.PALE_OAK_LEAVES, noDrop()); //TODO: Add for 1.21.4
+        this.add(Blocks.PALE_OAK_LEAVES, (block) -> this.createLeavesDrops(block, Blocks.PALE_OAK_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(Blocks.CHERRY_LEAVES, block -> this.createLeavesDrops(block, Blocks.CHERRY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(Blocks.AZALEA_LEAVES, block -> this.createLeavesDrops(block, Blocks.AZALEA, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(Blocks.FLOWERING_AZALEA_LEAVES, block -> this.createLeavesDrops(block, Blocks.FLOWERING_AZALEA, NORMAL_LEAVES_SAPLING_CHANCES));
@@ -53,6 +54,13 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         this.add(Blocks.TALL_GRASS, block -> this.createDoublePlantWithSeedDrops(block, Blocks.SHORT_GRASS));
         this.addNetherVinesDropTable(Blocks.WEEPING_VINES, Blocks.WEEPING_VINES_PLANT);
         this.addNetherVinesDropTable(Blocks.TWISTING_VINES, Blocks.TWISTING_VINES_PLANT);
+        this.dropSelf(ModBlocks.COPPER_RAIL.get());
+        this.dropSelf(ModBlocks.COPPER_ACTIVATOR_RAIL.get());
+        this.dropSelf(ModBlocks.COPPER_DETECTOR_RAIL.get());
+        this.dropSelf(ModBlocks.COPPER_POWERED_RAIL.get());
+        this.dropSelf(ModBlocks.COPPER_CHAIN.get());
+        this.add(ModBlocks.COPPER_LANTERN.get(), this::createSingleItemTable);
+        this.add(ModBlocks.COPPER_SOUL_LANTERN.get(), this::createSingleItemTable);
     }
 
     public LootItemCondition.@NotNull Builder hasShears() {
