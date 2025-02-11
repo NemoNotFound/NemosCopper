@@ -1,11 +1,6 @@
-# Changelog v1.2
+# Changelog v1.3
 
 ## Additions
-- Added copper lantern
-- Added copper soul lantern
-- Added copper nugget
-- Added copper chain
-- Added brazilian portuguese translation
+- Added copper bucket
 
 ## Fixes
-- Copper rails don't drop when broken

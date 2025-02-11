@@ -215,6 +215,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy("has_copper_nugget", this.has(ModItems.COPPER_NUGGET.get()))
                         .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
                         .save(this.output);
+
+                this.shaped(RecipeCategory.MISC, ModItems.COPPER_BUCKET.get())
+                        .define('#', Items.COPPER_INGOT)
+                        .pattern("# #")
+                        .pattern(" # ")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT)).save(this.output);
             }
         };
     }

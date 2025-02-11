@@ -38,6 +38,17 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.COPPER_LEGGINGS.get());
                 output.accept(ModItems.COPPER_BOOTS.get());
                 output.accept(ModItems.COPPER_NUGGET.get());
+                output.accept(ModItems.COPPER_BUCKET.get());
+                output.accept(ModItems.WATER_COPPER_BUCKET.get());
+                output.accept(ModItems.COD_COPPER_BUCKET.get());
+                output.accept(ModItems.SALMON_COPPER_BUCKET.get());
+                output.accept(ModItems.TROPICAL_FISH_COPPER_BUCKET.get());
+                output.accept(ModItems.PUFFERFISH_COPPER_BUCKET.get());
+                output.accept(ModItems.AXOLOTL_COPPER_BUCKET.get());
+                output.accept(ModItems.TADPOLE_COPPER_BUCKET.get());
+                output.accept(ModItems.LAVA_COPPER_BUCKET.get());
+                output.accept(ModItems.POWDER_SNOW_COPPER_BUCKET.get());
+                output.accept(ModItems.MILK_COPPER_BUCKET.get());
             })
             .build());
 

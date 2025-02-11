@@ -49,5 +49,6 @@ public class GermanLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.COPPER_LEGGINGS.get(), "Kupferbeinschutz");
         translationBuilder.add(ModItems.COPPER_BOOTS.get(), "Kupferstiefel");
         translationBuilder.add(ModItems.COPPER_NUGGET.get(), "Kupferklumpen");
+        translationBuilder.add(ModItems.COPPER_BUCKET.get(), "Kupfereimer");
     }
 }

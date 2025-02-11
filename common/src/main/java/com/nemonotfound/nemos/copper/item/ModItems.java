@@ -5,8 +5,14 @@ import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.entities.ModEntityTypes;
 import com.nemonotfound.nemos.copper.item.equipment.ModArmorMaterials;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluids;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -37,6 +43,17 @@ public class ModItems {
     public static final Supplier<Item> COPPER_SOUL_LANTERN = registerBlockItem("copper_soul_lantern", properties -> new BlockItem(ModBlocks.COPPER_SOUL_LANTERN.get(), properties));
     public static final Supplier<Item> COPPER_NUGGET = register("copper_nugget", Item::new);
     public static final Supplier<Item> COPPER_CHAIN = registerBlockItem("copper_chain", properties -> new BlockItem(ModBlocks.COPPER_CHAIN.get(), properties));
+    public static final Supplier<Item> COPPER_BUCKET = register("copper_bucket", (properties) -> new BucketItem(Fluids.EMPTY, properties), (new Item.Properties()).stacksTo(16));
+    public static final Supplier<Item> WATER_COPPER_BUCKET = register("water_copper_bucket", (properties) -> new BucketItem(Fluids.WATER, properties), (new Item.Properties()).craftRemainder(COPPER_BUCKET.get()).stacksTo(1));
+    public static final Supplier<Item> LAVA_COPPER_BUCKET = register("lava_copper_bucket", (properties) -> new BucketItem(Fluids.LAVA, properties), (new Item.Properties()).craftRemainder(COPPER_BUCKET.get()).stacksTo(1));
+    public static final Supplier<Item> POWDER_SNOW_COPPER_BUCKET = register("powder_snow_copper_bucket", (properties) -> new SolidBucketItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, properties), (new Item.Properties()).stacksTo(1).useItemDescriptionPrefix());
+    public static final Supplier<Item> MILK_COPPER_BUCKET = register("milk_copper_bucket", Item::new, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).component(DataComponents.CONSUMABLE, Consumables.MILK_BUCKET).usingConvertsTo(COPPER_BUCKET.get()).stacksTo(1));
+    public static final Supplier<Item> PUFFERFISH_COPPER_BUCKET = register("pufferfish_copper_bucket", (properties) -> new MobBucketItem(EntityType.PUFFERFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), (new Item.Properties()).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    public static final Supplier<Item> SALMON_COPPER_BUCKET = register("salmon_copper_bucket", (properties) -> new MobBucketItem(EntityType.SALMON, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), (new Item.Properties()).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    public static final Supplier<Item> COD_COPPER_BUCKET = register("cod_copper_bucket", (properties) -> new MobBucketItem(EntityType.COD, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), (new Item.Properties()).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    public static final Supplier<Item> TROPICAL_FISH_COPPER_BUCKET = register("tropical_fish_copper_bucket", (properties) -> new MobBucketItem(EntityType.TROPICAL_FISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), (new Item.Properties()).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    public static final Supplier<Item> AXOLOTL_COPPER_BUCKET = register("axolotl_copper_bucket", (properties) -> new MobBucketItem(EntityType.AXOLOTL, Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, properties), (new Item.Properties()).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    public static final Supplier<Item> TADPOLE_COPPER_BUCKET = register("tadpole_copper_bucket", (properties) -> new MobBucketItem(EntityType.TADPOLE, Fluids.WATER, SoundEvents.BUCKET_EMPTY_TADPOLE, properties), (new Item.Properties()).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
 
     public static void init() {}
 

@@ -49,5 +49,6 @@ public class BrazilianPortugueseLanguageProvider extends FabricLanguageProvider 
         translationBuilder.add(ModItems.COPPER_LEGGINGS.get(), "Calças de cobre");
         translationBuilder.add(ModItems.COPPER_BOOTS.get(), "Botas de cobre");
         translationBuilder.add(ModItems.COPPER_NUGGET.get(), "Pepita de cobre");
+        translationBuilder.add(ModItems.COPPER_BUCKET.get(), "Balde de cobre");
     }
 }

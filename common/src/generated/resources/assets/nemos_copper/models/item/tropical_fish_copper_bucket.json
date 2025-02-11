@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nemos_copper:item/tropical_fish_copper_bucket"
+  }
+}
