@@ -2,7 +2,8 @@
 <br><br>
 
 # Description
-Nemo's Copper adds more blocks and items out of copper!
+Nemo's Copper adds more blocks and items out of copper! <br>
+For more information and a list of everything added check the [wiki](https://github.com/NemoNotFound/NemosCopper/wiki).
 <br>
 
 [![Join my Discord](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true)](https://discord.com/invite/yxs9dga)
@@ -11,8 +12,6 @@ Nemo's Copper adds more blocks and items out of copper!
 
 I love to create mods for Minecraft and wish to live off it one day, so I hope you like what I do. <br>
 Either way feel free to give me your feedback and suggestions, either on my Discord or the [discussions](https://github.com/NemoNotFound/NemosCopper/discussions/) :)
-<br><br>
-For more information check the [wiki](https://www.nemonotfound.com/minecraft-mods/nemos-copper/wiki).
 
 [![ko-fi donation](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nemonotfound)
 <br>
