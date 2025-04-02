@@ -24,15 +24,15 @@ public class ModItems {
     public static Supplier<Item> COPPER_HOPPER_MINECART = register("copper_hopper_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_HOPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_COMMAND_BLOCK_MINECART = register("copper_command_block_minecart", properties -> new MinecartItem(ModEntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), properties), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
     public static Supplier<Item> COPPER_SHEARS = register("copper_shears", ShearsItem::new, () -> new Item.Properties().durability(188).component(DataComponents.TOOL, ShearsItem.createToolProperties()));
-    public static final Supplier<Item> COPPER_SWORD = register("copper_sword", properties -> new SwordItem(ModToolMaterials.COPPER, 3.0F, -2.4F, properties));
+    public static final Supplier<Item> COPPER_SWORD = register("copper_sword", () -> new Item.Properties().sword(ModToolMaterials.COPPER, 3.0F, -2.4F));
     public static final Supplier<Item> COPPER_SHOVEL = register("copper_shovel", properties -> new ShovelItem(ModToolMaterials.COPPER, 1.5F, -3.0F, properties));
-    public static final Supplier<Item> COPPER_PICKAXE = register("copper_pickaxe", properties -> new PickaxeItem(ModToolMaterials.COPPER, 1.0F, -2.8F, properties));
+    public static final Supplier<Item> COPPER_PICKAXE = register("copper_pickaxe", () -> new Item.Properties().pickaxe(ModToolMaterials.COPPER, 1.0F, -2.8F));
     public static final Supplier<Item> COPPER_AXE = register("copper_axe", properties -> new AxeItem(ModToolMaterials.COPPER, 6.5F, -3.15F, properties));
     public static final Supplier<Item> COPPER_HOE = register("copper_hoe", properties -> new HoeItem(ModToolMaterials.COPPER, -1.5F, -1.5F, properties));
-    public static final Supplier<Item> COPPER_HELMET = register("copper_helmet", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.HELMET, properties));
-    public static final Supplier<Item> COPPER_CHESTPLATE = register("copper_chestplate", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.CHESTPLATE, properties));
-    public static final Supplier<Item> COPPER_LEGGINGS = register("copper_leggings", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.LEGGINGS, properties));
-    public static final Supplier<Item> COPPER_BOOTS = register("copper_boots", properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.BOOTS, properties));
+    public static final Supplier<Item> COPPER_HELMET = register("copper_helmet", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.HELMET));
+    public static final Supplier<Item> COPPER_CHESTPLATE = register("copper_chestplate", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.CHESTPLATE));
+    public static final Supplier<Item> COPPER_LEGGINGS = register("copper_leggings", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.LEGGINGS));
+    public static final Supplier<Item> COPPER_BOOTS = register("copper_boots", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.BOOTS));
     public static final Supplier<Item> COPPER_LANTERN = registerBlockItem("copper_lantern", properties -> new BlockItem(ModBlocks.COPPER_LANTERN.get(), properties));
     public static final Supplier<Item> COPPER_SOUL_LANTERN = registerBlockItem("copper_soul_lantern", properties -> new BlockItem(ModBlocks.COPPER_SOUL_LANTERN.get(), properties));
     public static final Supplier<Item> COPPER_NUGGET = register("copper_nugget", Item::new);
@@ -54,5 +54,9 @@ public class ModItems {
 
     private static Supplier<Item> register(String id, Function<Item.Properties, Item> function, Supplier<Item.Properties> properties) {
         return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, function, properties);
+    }
+
+    private static Supplier<Item> register(String id, Supplier<Item.Properties> properties) {
+        return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, Item::new, properties);
     }
 }
