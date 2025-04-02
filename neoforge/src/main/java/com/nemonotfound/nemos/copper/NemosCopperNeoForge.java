@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.copper;
 
 
-import com.nemonotfound.nemos.copper.item.ModItems;
+import com.nemonotfound.nemos.copper.item.Items;
 import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -40,6 +40,6 @@ public class NemosCopperNeoForge {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     private static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> DispenserBlock.registerBehavior(ModItems.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
+        event.enqueueWork(() -> DispenserBlock.registerBehavior(Items.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
     }
 }

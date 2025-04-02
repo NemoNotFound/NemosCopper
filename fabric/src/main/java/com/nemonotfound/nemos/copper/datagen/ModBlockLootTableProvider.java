@@ -1,13 +1,12 @@
 package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
-import com.nemonotfound.nemos.copper.item.ModItems;
+import com.nemonotfound.nemos.copper.item.Items;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
@@ -38,8 +37,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         this.add(Blocks.CHERRY_LEAVES, block -> this.createLeavesDrops(block, Blocks.CHERRY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(Blocks.AZALEA_LEAVES, block -> this.createLeavesDrops(block, Blocks.AZALEA, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(Blocks.FLOWERING_AZALEA_LEAVES, block -> this.createLeavesDrops(block, Blocks.FLOWERING_AZALEA, NORMAL_LEAVES_SAPLING_CHANCES));
-        this.add(Blocks.COBWEB, block -> this.createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STRING))));
-        this.add(Blocks.DEAD_BUSH, block -> this.createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))));
+        this.add(Blocks.COBWEB, block -> this.createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(net.minecraft.world.item.Items.STRING))));
+        this.add(Blocks.DEAD_BUSH, block -> this.createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(net.minecraft.world.item.Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))));
         this.add(Blocks.NETHER_SPROUTS, this::createShearsOnlyDrop);
         this.add(Blocks.SEAGRASS, this::createShearsOnlyDrop);
         this.add(Blocks.VINE, this::createShearsOnlyDrop);
@@ -64,7 +63,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
     }
 
     public LootItemCondition.@NotNull Builder hasShears() {
-        return MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), Items.SHEARS))
-                .or( MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), ModItems.COPPER_SHEARS.get())));
+        return MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), net.minecraft.world.item.Items.SHEARS))
+                .or( MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), Items.COPPER_SHEARS.get())));
     }
 }
