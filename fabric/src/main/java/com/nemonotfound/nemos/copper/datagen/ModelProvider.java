@@ -10,6 +10,9 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
+import static net.minecraft.client.data.models.ItemModelGenerators.*;
+
 public class ModelProvider extends FabricModelProvider {
 
     public ModelProvider(FabricDataOutput output) {
@@ -24,7 +27,7 @@ public class ModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createActiveRail(ModBlocks.COPPER_ACTIVATOR_RAIL.get());
         blockStateModelGenerator.createLantern(ModBlocks.COPPER_LANTERN.get());
         blockStateModelGenerator.createLantern(ModBlocks.COPPER_SOUL_LANTERN.get());
-        blockStateModelGenerator.createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_CHAIN.get(), ModelLocationUtils.getModelLocation(ModBlocks.COPPER_CHAIN.get()));
+        blockStateModelGenerator.createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_CHAIN.get(), plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.COPPER_CHAIN.get())));
         blockStateModelGenerator.registerSimpleFlatItemModel(ModItems.COPPER_CHAIN.get());
     }
 
@@ -55,9 +58,9 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.POWDER_SNOW_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.MILK_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_HELMET.get(), ModEquipmentAssets.COPPER, "helmet", false);
-        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, "chestplate", false);
-        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_LEGGINGS.get(), ModEquipmentAssets.COPPER, "leggings", false);
-        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_BOOTS.get(), ModEquipmentAssets.COPPER, "boots", false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_HELMET.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_LEGGINGS.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.COPPER_BOOTS.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_BOOTS, false);
     }
 }
