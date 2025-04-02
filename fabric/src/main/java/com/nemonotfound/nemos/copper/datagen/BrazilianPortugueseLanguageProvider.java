@@ -50,5 +50,15 @@ public class BrazilianPortugueseLanguageProvider extends FabricLanguageProvider 
         translationBuilder.add(Items.COPPER_BOOTS.get(), "Botas de cobre");
         translationBuilder.add(Items.COPPER_NUGGET.get(), "Pepita de cobre");
         translationBuilder.add(Items.COPPER_BUCKET.get(), "Balde de cobre");
+        translationBuilder.add(Items.COPPER_WATER_BUCKET.get(), "Balde de Água de Cobre");
+        translationBuilder.add(Items.COPPER_COD_BUCKET.get(), "Balde de Bacalhau de Cobre");
+        translationBuilder.add(Items.COPPER_SALMON_BUCKET.get(), "Balde de Salmão de Cobre");
+        translationBuilder.add(Items.COPPER_TROPICAL_FISH_BUCKET.get(), "Balde de Peixe Tropical de Cobre");
+        translationBuilder.add(Items.COPPER_PUFFERFISH_BUCKET.get(), "Balde de Baiacu de Cobre");
+        translationBuilder.add(Items.COPPER_AXOLOTL_BUCKET.get(), "Balde de Axolote de Cobre");
+        translationBuilder.add(Items.COPPER_TADPOLE_BUCKET.get(), "Balde de Girino de Cobre");
+        translationBuilder.add(Items.COPPER_LAVA_BUCKET.get(), "Balde de Lava de Cobre");
+        translationBuilder.add(Items.COPPER_POWDER_SNOW_BUCKET.get(), "Balde de Neve Fofa de Cobre");
+        translationBuilder.add(Items.COPPER_MILK_BUCKET.get(), "Balde de Leite de Cobre");
     }
 }

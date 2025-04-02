@@ -47,16 +47,16 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(Items.COPPER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(Items.COPPER_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Items.COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.WATER_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.COD_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.SALMON_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.TROPICAL_FISH_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.PUFFERFISH_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.AXOLOTL_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.TADPOLE_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.LAVA_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.POWDER_SNOW_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Items.MILK_COPPER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_WATER_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_COD_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_SALMON_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_TROPICAL_FISH_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_PUFFERFISH_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_AXOLOTL_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_TADPOLE_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_LAVA_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_POWDER_SNOW_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Items.COPPER_MILK_BUCKET.get(), ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateTrimmableItem(Items.COPPER_HELMET.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_HELMET, false);
         itemModelGenerator.generateTrimmableItem(Items.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_CHESTPLATE, false);

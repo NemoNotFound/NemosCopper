@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nemos_copper:item/tadpole_copper_bucket"
+    "layer0": "nemos_copper:item/copper_powder_snow_bucket"
   }
 }

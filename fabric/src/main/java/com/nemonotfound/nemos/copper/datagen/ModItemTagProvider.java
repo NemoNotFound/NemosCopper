@@ -43,5 +43,18 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.COPPER_CHESTPLATE.get())
                 .add(Items.COPPER_LEGGINGS.get())
                 .add(Items.COPPER_BOOTS.get());
+
+        getOrCreateTagBuilder(ModItemTags.COPPER_BUCKETS)
+                .add(Items.COPPER_BUCKET.get())
+                .add(Items.COPPER_WATER_BUCKET.get())
+                .add(Items.COPPER_LAVA_BUCKET.get())
+                .add(Items.COPPER_POWDER_SNOW_BUCKET.get())
+                .add(Items.COPPER_MILK_BUCKET.get())
+                .add(Items.COPPER_PUFFERFISH_BUCKET.get())
+                .add(Items.COPPER_SALMON_BUCKET.get())
+                .add(Items.COPPER_COD_BUCKET.get())
+                .add(Items.COPPER_TROPICAL_FISH_BUCKET.get())
+                .add(Items.COPPER_AXOLOTL_BUCKET.get())
+                .add(Items.COPPER_TADPOLE_BUCKET.get());
     }
 }

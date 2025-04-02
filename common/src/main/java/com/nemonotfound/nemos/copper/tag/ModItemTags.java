@@ -11,6 +11,7 @@ public class ModItemTags {
 
     public static final TagKey<Item> COPPER_TOOL_MATERIALS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_tool_materials"));
     public static final TagKey<Item> REPAIRS_COPPER_ARMOR = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, "repairs_copper_armor"));
+    public static final TagKey<Item> COPPER_BUCKETS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_buckets"));
 
     public static void init() {}
 }

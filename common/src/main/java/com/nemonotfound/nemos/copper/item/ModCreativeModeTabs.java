@@ -39,16 +39,16 @@ public class ModCreativeModeTabs {
                 output.accept(Items.COPPER_BOOTS.get());
                 output.accept(Items.COPPER_NUGGET.get());
                 output.accept(Items.COPPER_BUCKET.get());
-                output.accept(Items.WATER_COPPER_BUCKET.get());
-                output.accept(Items.COD_COPPER_BUCKET.get());
-                output.accept(Items.SALMON_COPPER_BUCKET.get());
-                output.accept(Items.TROPICAL_FISH_COPPER_BUCKET.get());
-                output.accept(Items.PUFFERFISH_COPPER_BUCKET.get());
-                output.accept(Items.AXOLOTL_COPPER_BUCKET.get());
-                output.accept(Items.TADPOLE_COPPER_BUCKET.get());
-                output.accept(Items.LAVA_COPPER_BUCKET.get());
-                output.accept(Items.POWDER_SNOW_COPPER_BUCKET.get());
-                output.accept(Items.MILK_COPPER_BUCKET.get());
+                output.accept(Items.COPPER_WATER_BUCKET.get());
+                output.accept(Items.COPPER_COD_BUCKET.get());
+                output.accept(Items.COPPER_SALMON_BUCKET.get());
+                output.accept(Items.COPPER_TROPICAL_FISH_BUCKET.get());
+                output.accept(Items.COPPER_PUFFERFISH_BUCKET.get());
+                output.accept(Items.COPPER_AXOLOTL_BUCKET.get());
+                output.accept(Items.COPPER_TADPOLE_BUCKET.get());
+                output.accept(Items.COPPER_LAVA_BUCKET.get());
+                output.accept(Items.COPPER_POWDER_SNOW_BUCKET.get());
+                output.accept(Items.COPPER_MILK_BUCKET.get());
             })
             .build());
 

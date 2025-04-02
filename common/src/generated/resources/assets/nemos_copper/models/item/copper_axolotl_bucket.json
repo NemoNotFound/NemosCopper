@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nemos_copper:item/lava_copper_bucket"
+    "layer0": "nemos_copper:item/copper_axolotl_bucket"
   }
 }

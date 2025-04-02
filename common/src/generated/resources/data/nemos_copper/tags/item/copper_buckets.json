@@ -1,0 +1,15 @@
+{
+  "values": [
+    "nemos_copper:copper_bucket",
+    "nemos_copper:copper_water_bucket",
+    "nemos_copper:copper_lava_bucket",
+    "nemos_copper:copper_powder_snow_bucket",
+    "nemos_copper:copper_milk_bucket",
+    "nemos_copper:copper_pufferfish_bucket",
+    "nemos_copper:copper_salmon_bucket",
+    "nemos_copper:copper_cod_bucket",
+    "nemos_copper:copper_tropical_fish_bucket",
+    "nemos_copper:copper_axolotl_bucket",
+    "nemos_copper:copper_tadpole_bucket"
+  ]
+}

@@ -50,6 +50,15 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(Items.COPPER_BOOTS.get(), "Copper Boots");
         translationBuilder.add(Items.COPPER_NUGGET.get(), "Copper Nugget");
         translationBuilder.add(Items.COPPER_BUCKET.get(), "Copper Bucket");
-        //ToDo: Add translation for other buckets
+        translationBuilder.add(Items.COPPER_WATER_BUCKET.get(), "Copper Water Bucket");
+        translationBuilder.add(Items.COPPER_COD_BUCKET.get(), "Copper Cod Bucket");
+        translationBuilder.add(Items.COPPER_SALMON_BUCKET.get(), "Copper Salmon Bucket");
+        translationBuilder.add(Items.COPPER_TROPICAL_FISH_BUCKET.get(), "Copper Tropical Fish Bucket");
+        translationBuilder.add(Items.COPPER_PUFFERFISH_BUCKET.get(), "Copper Pufferfish Bucket");
+        translationBuilder.add(Items.COPPER_AXOLOTL_BUCKET.get(), "Copper Axolotl Bucket");
+        translationBuilder.add(Items.COPPER_TADPOLE_BUCKET.get(), "Copper Tadpole Bucket");
+        translationBuilder.add(Items.COPPER_LAVA_BUCKET.get(), "Copper Lava Bucket");
+        translationBuilder.add(Items.COPPER_POWDER_SNOW_BUCKET.get(), "Copper Powder Snow Bucket");
+        translationBuilder.add(Items.COPPER_MILK_BUCKET.get(), "Copper Milk Bucket");
     }
 }

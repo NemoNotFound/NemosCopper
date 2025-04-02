@@ -50,5 +50,15 @@ public class GermanLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(Items.COPPER_BOOTS.get(), "Kupferstiefel");
         translationBuilder.add(Items.COPPER_NUGGET.get(), "Kupferklumpen");
         translationBuilder.add(Items.COPPER_BUCKET.get(), "Kupfereimer");
+        translationBuilder.add(Items.COPPER_WATER_BUCKET.get(), "Kupferwassereimer");
+        translationBuilder.add(Items.COPPER_COD_BUCKET.get(), "Kupferkabeljaueimer");
+        translationBuilder.add(Items.COPPER_SALMON_BUCKET.get(), "Kupferlachseimer");
+        translationBuilder.add(Items.COPPER_TROPICAL_FISH_BUCKET.get(), "Kupfertropenfischeimer");
+        translationBuilder.add(Items.COPPER_PUFFERFISH_BUCKET.get(), "Kupferkugelfischeimer");
+        translationBuilder.add(Items.COPPER_AXOLOTL_BUCKET.get(), "Kupferaxolotleimer");
+        translationBuilder.add(Items.COPPER_TADPOLE_BUCKET.get(), "Kupferkaulquappeneimer");
+        translationBuilder.add(Items.COPPER_LAVA_BUCKET.get(), "Kupferlavaeimer");
+        translationBuilder.add(Items.COPPER_POWDER_SNOW_BUCKET.get(), "Kupferpulverschneeeimer");
+        translationBuilder.add(Items.COPPER_MILK_BUCKET.get(), "Kupfermilcheimer");
     }
 }
