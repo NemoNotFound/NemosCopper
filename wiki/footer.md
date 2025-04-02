@@ -1,17 +1,3 @@
-![Nemo's Copper](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/minecraft_projects/titles/png/nemos_copper.png?raw=true)
-<br><br>
-
-# Description
-Nemo's Copper adds more blocks and items out of copper! <br>
-For more information and a list of everything added check the [wiki](https://github.com/NemoNotFound/NemosCopper/wiki).
-<br><br>
-
-# Downloads
-- [CurseForge](https://curseforge.com/minecraft/mc-mods/nemos-copper)
-- [Modrinth](https://modrinth.com/mod/nemos-copper)
-<br>
-<br>
-
 # Join my Discord!
 [![Join my Discord](https://github.com/NemoNotFound/NemoNotFound/blob/master/resources/svg/join_discord_button.svg?raw=true)](https://discord.com/invite/yxs9dga)
 <br><br>
