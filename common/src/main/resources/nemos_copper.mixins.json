@@ -11,7 +11,6 @@
     "BucketItemMixin",
     "CauldronInteractionMixin",
     "CodMixin",
-    "ItemBlockRenderTypesMixin",
     "LavaFluidMixin",
     "LiquidBlockMixin",
     "PowderSnowBlockMixin",
@@ -22,7 +21,10 @@
     "TropicalFishMixin",
     "WaterFluidMixin"
   ],
-  "client": [],
+  "client": [
+    "BlockColorsMixin",
+    "ItemBlockRenderTypesMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
