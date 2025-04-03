@@ -1,0 +1,11 @@
+{
+  "parent": "nemos_copper:block/template_copper_cauldron_full",
+  "textures": {
+    "bottom": "nemos_copper:block/copper_cauldron_bottom",
+    "content": "minecraft:block/powder_snow",
+    "inside": "nemos_copper:block/copper_cauldron_inner",
+    "particle": "nemos_copper:block/copper_cauldron_side",
+    "side": "nemos_copper:block/copper_cauldron_side",
+    "top": "nemos_copper:block/copper_cauldron_top"
+  }
+}

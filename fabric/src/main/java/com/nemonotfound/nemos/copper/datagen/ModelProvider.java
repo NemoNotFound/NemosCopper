@@ -1,15 +1,24 @@
 package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
+import com.nemonotfound.nemos.copper.client.data.models.model.TextureMappings;
 import com.nemonotfound.nemos.copper.item.Items;
 import com.nemonotfound.nemos.copper.item.equipment.ModEquipmentAssets;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LayeredCauldronBlock;
 
+import static com.nemonotfound.nemos.copper.client.data.models.model.ModelTemplates.*;
+import static com.nemonotfound.nemos.copper.client.data.models.model.ModelTemplates.COPPER_CAULDRON_LEVEL2;
+import static net.minecraft.client.data.models.BlockModelGenerators.createSimpleBlock;
 import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 import static net.minecraft.client.data.models.ItemModelGenerators.*;
 
@@ -29,6 +38,8 @@ public class ModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createLantern(ModBlocks.COPPER_SOUL_LANTERN.get());
         blockStateModelGenerator.createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_CHAIN.get(), plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.COPPER_CHAIN.get())));
         blockStateModelGenerator.registerSimpleFlatItemModel(Items.COPPER_CHAIN.get());
+
+        createCauldrons(blockStateModelGenerator);
     }
 
     @Override
@@ -62,5 +73,101 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateTrimmableItem(Items.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_CHESTPLATE, false);
         itemModelGenerator.generateTrimmableItem(Items.COPPER_LEGGINGS.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_LEGGINGS, false);
         itemModelGenerator.generateTrimmableItem(Items.COPPER_BOOTS.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_BOOTS, false);
+    }
+
+    private void createCauldrons(BlockModelGenerators blockModelGenerators) {
+        blockModelGenerators.registerSimpleFlatItemModel(Items.COPPER_CAULDRON.get());
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.COPPER_CAULDRON.get());
+        blockModelGenerators.blockStateOutput.accept(
+                createSimpleBlock(
+                        ModBlocks.COPPER_LAVA_CAULDRON.get(),
+                        plainVariant(
+                                COPPER_CAULDRON_FULL.create(
+                                        ModBlocks.COPPER_LAVA_CAULDRON.get(),
+                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.LAVA, "_still")),
+                                        blockModelGenerators.modelOutput)
+                        )
+                )
+        );
+        blockModelGenerators.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(ModBlocks.COPPER_WATER_CAULDRON.get())
+                        .with(
+                                PropertyDispatch.initial(LayeredCauldronBlock.LEVEL)
+                                        .select(
+                                                1,
+                                                plainVariant(
+                                                        COPPER_CAULDRON_LEVEL1
+                                                                .createWithSuffix(
+                                                                        ModBlocks.COPPER_WATER_CAULDRON.get(),
+                                                                        "_level1",
+                                                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.WATER, "_still")),
+                                                                        blockModelGenerators.modelOutput)
+                                                )
+                                        )
+                                        .select(
+                                                2,
+                                                plainVariant(
+                                                        COPPER_CAULDRON_LEVEL2
+                                                                .createWithSuffix(
+                                                                        ModBlocks.COPPER_WATER_CAULDRON.get(),
+                                                                        "_level2",
+                                                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.WATER, "_still")),
+                                                                        blockModelGenerators.modelOutput)
+                                                )
+                                        )
+                                        .select(
+                                                3,
+                                                plainVariant(
+                                                        COPPER_CAULDRON_FULL
+                                                                .createWithSuffix(
+                                                                        ModBlocks.COPPER_WATER_CAULDRON.get(),
+                                                                        "_full",
+                                                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.WATER, "_still")),
+                                                                        blockModelGenerators.modelOutput)
+                                                )
+                                        )
+                        )
+        );
+        blockModelGenerators.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get())
+                        .with(
+                                PropertyDispatch.initial(LayeredCauldronBlock.LEVEL)
+                                        .select(
+                                                1,
+                                                plainVariant(
+                                                        COPPER_CAULDRON_LEVEL1
+                                                                .createWithSuffix(
+                                                                        ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(),
+                                                                        "_level1",
+                                                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.POWDER_SNOW)),
+                                                                        blockModelGenerators.modelOutput
+                                                                )
+                                                )
+                                        )
+                                        .select(
+                                                2,
+                                                plainVariant(
+                                                        COPPER_CAULDRON_LEVEL2
+                                                                .createWithSuffix(
+                                                                        ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(),
+                                                                        "_level2",
+                                                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.POWDER_SNOW)),
+                                                                        blockModelGenerators.modelOutput
+                                                                )
+                                                )
+                                        )
+                                        .select(
+                                                3,
+                                                plainVariant(
+                                                        COPPER_CAULDRON_FULL
+                                                                .createWithSuffix(
+                                                                        ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(),
+                                                                        "_full",
+                                                                        TextureMappings.cauldron(TextureMapping.getBlockTexture(Blocks.POWDER_SNOW)),
+                                                                        blockModelGenerators.modelOutput)
+                                                )
+                                        )
+                        )
+        );
     }
 }

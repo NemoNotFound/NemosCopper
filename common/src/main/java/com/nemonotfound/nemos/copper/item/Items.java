@@ -2,8 +2,8 @@ package com.nemonotfound.nemos.copper.item;
 
 import com.nemonotfound.nemos.copper.NemosCopperCommon;
 import com.nemonotfound.nemos.copper.block.ModBlocks;
-import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
 import com.nemonotfound.nemos.copper.item.equipment.ModArmorMaterials;
+import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -54,6 +54,8 @@ public class Items {
     public static final Supplier<Item> COPPER_TROPICAL_FISH_BUCKET = register("copper_tropical_fish_bucket", (properties) -> new MobBucketItem(EntityType.TROPICAL_FISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
     public static final Supplier<Item> COPPER_AXOLOTL_BUCKET = register("copper_axolotl_bucket", (properties) -> new MobBucketItem(EntityType.AXOLOTL, Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
     public static final Supplier<Item> COPPER_TADPOLE_BUCKET = register("copper_tadpole_bucket", (properties) -> new MobBucketItem(EntityType.TADPOLE, Fluids.WATER, SoundEvents.BUCKET_EMPTY_TADPOLE, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    //public static final Supplier<Item> COPPER_CAULDRON = registerBlockItem(ModBlocks.COPPER_CAULDRON, ModBlocks.COPPER_WATER_CAULDRON, ModBlocks.COPPER_LAVA_CAULDRON, ModBlocks.COPPER_POWDER_SNOW_CAULDRON); //TODO: Make this work
+    public static final Supplier<Item> COPPER_CAULDRON = registerBlockItem("copper_cauldron", properties -> new BlockItem(ModBlocks.COPPER_CAULDRON.get(), properties));
 
     public static void init() {}
 
@@ -76,4 +78,15 @@ public class Items {
     private static Supplier<Item> register(String id, Supplier<Item.Properties> properties) {
         return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, Item::new, properties);
     }
+
+    //TODO: Make it work for neoForge as well
+//    public static Item registerBlockItem(Supplier<Block> block, Supplier<Block>... others) {
+//        Item item = registerBlock(block);
+//
+//        for (Block block : others) {
+//            Item.BY_BLOCK.put(block, item);
+//        }
+//
+//        return item;
+//    }
 }
