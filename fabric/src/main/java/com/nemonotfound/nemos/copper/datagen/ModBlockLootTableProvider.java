@@ -60,6 +60,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         this.dropSelf(ModBlocks.COPPER_CHAIN.get());
         this.add(ModBlocks.COPPER_LANTERN.get(), this::createSingleItemTable);
         this.add(ModBlocks.COPPER_SOUL_LANTERN.get(), this::createSingleItemTable);
+        //TODO: Add cauldron loot table
     }
 
     public LootItemCondition.@NotNull Builder hasShears() {

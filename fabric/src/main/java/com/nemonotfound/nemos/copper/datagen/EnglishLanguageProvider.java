@@ -60,5 +60,6 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(Items.COPPER_LAVA_BUCKET.get(), "Copper Lava Bucket");
         translationBuilder.add(Items.COPPER_POWDER_SNOW_BUCKET.get(), "Copper Powder Snow Bucket");
         translationBuilder.add(Items.COPPER_MILK_BUCKET.get(), "Copper Milk Bucket");
+        //TODO: Add cauldron translation
     }
 }

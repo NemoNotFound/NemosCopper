@@ -32,5 +32,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COPPER_SOUL_LANTERN.get())
                 .add(ModBlocks.COPPER_CHAIN.get());
 
+        getOrCreateTagBuilder(BlockTags.CAULDRONS)
+                .add(ModBlocks.COPPER_CAULDRON.get())
+                .add(ModBlocks.COPPER_LAVA_CAULDRON.get())
+                .add(ModBlocks.COPPER_WATER_CAULDRON.get())
+                .add(ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get());
     }
 }

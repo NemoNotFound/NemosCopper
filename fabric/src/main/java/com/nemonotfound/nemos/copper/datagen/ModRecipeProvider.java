@@ -221,6 +221,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .unlockedBy("has_copper_ingot", this.has(net.minecraft.world.item.Items.COPPER_INGOT)).save(this.output);
             }
+
+            //TODO: Add cauldron recipe
         };
     }
 
