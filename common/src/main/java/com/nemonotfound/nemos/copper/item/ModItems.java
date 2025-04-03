@@ -11,18 +11,19 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class Items {
+public class ModItems {
 
-    public static Supplier<Item> COPPER_RAIL = registerBlockItem("copper_rail", properties -> new BlockItem(ModBlocks.COPPER_RAIL.get(), properties));
-    public static Supplier<Item> COPPER_ACTIVATOR_RAIL = registerBlockItem("copper_activator_rail", properties -> new BlockItem(ModBlocks.COPPER_ACTIVATOR_RAIL.get(), properties));
-    public static Supplier<Item> COPPER_DETECTOR_RAIL = registerBlockItem("copper_detector_rail", properties -> new BlockItem(ModBlocks.COPPER_DETECTOR_RAIL.get(), properties));
-    public static Supplier<Item> COPPER_POWERED_RAIL = registerBlockItem("copper_powered_rail", properties -> new BlockItem(ModBlocks.COPPER_POWERED_RAIL.get(), properties));
+    public static Supplier<Item> COPPER_RAIL = registerBlockItem("copper_rail", ModBlocks.COPPER_RAIL);
+    public static Supplier<Item> COPPER_ACTIVATOR_RAIL = registerBlockItem("copper_activator_rail", ModBlocks.COPPER_ACTIVATOR_RAIL);
+    public static Supplier<Item> COPPER_DETECTOR_RAIL = registerBlockItem("copper_detector_rail", ModBlocks.COPPER_DETECTOR_RAIL);
+    public static Supplier<Item> COPPER_POWERED_RAIL = registerBlockItem("copper_powered_rail", ModBlocks.COPPER_POWERED_RAIL);
     public static Supplier<Item> COPPER_MINECART = register("copper_minecart", properties -> new MinecartItem(EntityTypes.COPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_CHEST_MINECART = register("copper_chest_minecart", properties -> new MinecartItem(EntityTypes.COPPER_CHEST_MINECART.get(), properties), new Item.Properties().stacksTo(1));
     public static Supplier<Item> COPPER_FURNACE_MINECART = register("copper_furnace_minecart", properties -> new MinecartItem(EntityTypes.COPPER_FURNACE_MINECART.get(), properties), new Item.Properties().stacksTo(1));
@@ -39,10 +40,10 @@ public class Items {
     public static final Supplier<Item> COPPER_CHESTPLATE = register("copper_chestplate", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.CHESTPLATE));
     public static final Supplier<Item> COPPER_LEGGINGS = register("copper_leggings", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.LEGGINGS));
     public static final Supplier<Item> COPPER_BOOTS = register("copper_boots", () -> new Item.Properties().humanoidArmor(ModArmorMaterials.COPPER, ArmorType.BOOTS));
-    public static final Supplier<Item> COPPER_LANTERN = registerBlockItem("copper_lantern", properties -> new BlockItem(ModBlocks.COPPER_LANTERN.get(), properties));
-    public static final Supplier<Item> COPPER_SOUL_LANTERN = registerBlockItem("copper_soul_lantern", properties -> new BlockItem(ModBlocks.COPPER_SOUL_LANTERN.get(), properties));
+    public static final Supplier<Item> COPPER_LANTERN = registerBlockItem("copper_lantern", ModBlocks.COPPER_LANTERN);
+    public static final Supplier<Item> COPPER_SOUL_LANTERN = registerBlockItem("copper_soul_lantern", ModBlocks.COPPER_SOUL_LANTERN);
     public static final Supplier<Item> COPPER_NUGGET = register("copper_nugget", Item::new);
-    public static final Supplier<Item> COPPER_CHAIN = registerBlockItem("copper_chain", properties -> new BlockItem(ModBlocks.COPPER_CHAIN.get(), properties));
+    public static final Supplier<Item> COPPER_CHAIN = registerBlockItem("copper_chain", ModBlocks.COPPER_CHAIN);
     public static final Supplier<Item> COPPER_BUCKET = register("copper_bucket", (properties) -> new BucketItem(Fluids.EMPTY, properties), (new Item.Properties()).stacksTo(16));
     public static final Supplier<Item> COPPER_WATER_BUCKET = register("copper_water_bucket", (properties) -> new BucketItem(Fluids.WATER, properties), () -> new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1));
     public static final Supplier<Item> COPPER_LAVA_BUCKET = register("copper_lava_bucket", (properties) -> new BucketItem(Fluids.LAVA, properties), () -> new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1));
@@ -54,13 +55,12 @@ public class Items {
     public static final Supplier<Item> COPPER_TROPICAL_FISH_BUCKET = register("copper_tropical_fish_bucket", (properties) -> new MobBucketItem(EntityType.TROPICAL_FISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
     public static final Supplier<Item> COPPER_AXOLOTL_BUCKET = register("copper_axolotl_bucket", (properties) -> new MobBucketItem(EntityType.AXOLOTL, Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
     public static final Supplier<Item> COPPER_TADPOLE_BUCKET = register("copper_tadpole_bucket", (properties) -> new MobBucketItem(EntityType.TADPOLE, Fluids.WATER, SoundEvents.BUCKET_EMPTY_TADPOLE, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
-    //public static final Supplier<Item> COPPER_CAULDRON = registerBlockItem(ModBlocks.COPPER_CAULDRON, ModBlocks.COPPER_WATER_CAULDRON, ModBlocks.COPPER_LAVA_CAULDRON, ModBlocks.COPPER_POWDER_SNOW_CAULDRON); //TODO: Make this work
-    public static final Supplier<Item> COPPER_CAULDRON = registerBlockItem("copper_cauldron", properties -> new BlockItem(ModBlocks.COPPER_CAULDRON.get(), properties));
+    public static final Supplier<Item> COPPER_CAULDRON = registerBlockItem("copper_cauldron", ModBlocks.COPPER_CAULDRON);
 
     public static void init() {}
 
-    private static Supplier<Item> registerBlockItem(String id, Function<Item.Properties, Item> function) {
-        return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, function, new Item.Properties().useBlockDescriptionPrefix());
+    private static Supplier<Item> registerBlockItem(String id, Supplier<Block> blockSupplier) {
+        return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, properties -> new BlockItem(blockSupplier.get(), properties), new Item.Properties().useBlockDescriptionPrefix());
     }
 
     private static Supplier<Item> register(String id, Function<Item.Properties, Item> function) {
@@ -78,15 +78,4 @@ public class Items {
     private static Supplier<Item> register(String id, Supplier<Item.Properties> properties) {
         return NemosCopperCommon.REGISTRY_HELPER.registerItem(id, Item::new, properties);
     }
-
-    //TODO: Make it work for neoForge as well
-//    public static Item registerBlockItem(Supplier<Block> block, Supplier<Block>... others) {
-//        Item item = registerBlock(block);
-//
-//        for (Block block : others) {
-//            Item.BY_BLOCK.put(block, item);
-//        }
-//
-//        return item;
-//    }
 }

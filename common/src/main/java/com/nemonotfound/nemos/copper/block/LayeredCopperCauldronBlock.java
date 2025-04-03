@@ -2,12 +2,16 @@ package com.nemonotfound.nemos.copper.block;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.Block;
@@ -122,5 +126,15 @@ public class LayeredCopperCauldronBlock extends AbstractCauldronBlock {
             level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(blockstate));
             level.levelEvent(1047, blockPos, 0);
         }
+    }
+
+    @Override
+    protected @NotNull ItemStack getCloneItemStack(@NotNull LevelReader levelReader, @NotNull BlockPos blockPos, @NotNull BlockState blockState, boolean p_387375_) {
+        return new ItemStack(ModItems.COPPER_CAULDRON.get());
+    }
+
+    @Override
+    public @NotNull Item asItem() {
+        return ModItems.COPPER_CAULDRON.get();
     }
 }

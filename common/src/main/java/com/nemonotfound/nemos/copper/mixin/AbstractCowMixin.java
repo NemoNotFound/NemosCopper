@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.copper.mixin;
 
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -27,9 +27,9 @@ public abstract class AbstractCowMixin extends Animal {
     private void mobInteract(Player player, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> cir) {
         var itemStack = player.getItemInHand(interactionHand);
 
-        if (itemStack.is(Items.COPPER_BUCKET.get()) && !this.isBaby()) {
+        if (itemStack.is(ModItems.COPPER_BUCKET.get()) && !this.isBaby()) {
             player.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
-            ItemStack itemstack1 = ItemUtils.createFilledResult(itemStack, player, Items.COPPER_MILK_BUCKET.get().getDefaultInstance());
+            ItemStack itemstack1 = ItemUtils.createFilledResult(itemStack, player, ModItems.COPPER_MILK_BUCKET.get().getDefaultInstance());
             player.setItemInHand(interactionHand, itemstack1);
 
             cir.setReturnValue(InteractionResult.SUCCESS);

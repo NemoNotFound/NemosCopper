@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.copper.datagen;
 
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -24,37 +24,37 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(net.minecraft.world.item.Items.COPPER_INGOT);
 
         getOrCreateTagBuilder(ItemTags.AXES)
-                .add(Items.COPPER_AXE.get());
+                .add(ModItems.COPPER_AXE.get());
 
         getOrCreateTagBuilder(ItemTags.HOES)
-                .add(Items.COPPER_HOE.get());
+                .add(ModItems.COPPER_HOE.get());
 
         getOrCreateTagBuilder(ItemTags.PICKAXES)
-                .add(Items.COPPER_PICKAXE.get());
+                .add(ModItems.COPPER_PICKAXE.get());
 
         getOrCreateTagBuilder(ItemTags.SHOVELS)
-                .add(Items.COPPER_SHOVEL.get());
+                .add(ModItems.COPPER_SHOVEL.get());
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
-                .add(Items.COPPER_SWORD.get());
+                .add(ModItems.COPPER_SWORD.get());
 
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(Items.COPPER_HELMET.get())
-                .add(Items.COPPER_CHESTPLATE.get())
-                .add(Items.COPPER_LEGGINGS.get())
-                .add(Items.COPPER_BOOTS.get());
+                .add(ModItems.COPPER_HELMET.get())
+                .add(ModItems.COPPER_CHESTPLATE.get())
+                .add(ModItems.COPPER_LEGGINGS.get())
+                .add(ModItems.COPPER_BOOTS.get());
 
         getOrCreateTagBuilder(ModItemTags.COPPER_BUCKETS)
-                .add(Items.COPPER_BUCKET.get())
-                .add(Items.COPPER_WATER_BUCKET.get())
-                .add(Items.COPPER_LAVA_BUCKET.get())
-                .add(Items.COPPER_POWDER_SNOW_BUCKET.get())
-                .add(Items.COPPER_MILK_BUCKET.get())
-                .add(Items.COPPER_PUFFERFISH_BUCKET.get())
-                .add(Items.COPPER_SALMON_BUCKET.get())
-                .add(Items.COPPER_COD_BUCKET.get())
-                .add(Items.COPPER_TROPICAL_FISH_BUCKET.get())
-                .add(Items.COPPER_AXOLOTL_BUCKET.get())
-                .add(Items.COPPER_TADPOLE_BUCKET.get());
+                .add(ModItems.COPPER_BUCKET.get())
+                .add(ModItems.COPPER_WATER_BUCKET.get())
+                .add(ModItems.COPPER_LAVA_BUCKET.get())
+                .add(ModItems.COPPER_POWDER_SNOW_BUCKET.get())
+                .add(ModItems.COPPER_MILK_BUCKET.get())
+                .add(ModItems.COPPER_PUFFERFISH_BUCKET.get())
+                .add(ModItems.COPPER_SALMON_BUCKET.get())
+                .add(ModItems.COPPER_COD_BUCKET.get())
+                .add(ModItems.COPPER_TROPICAL_FISH_BUCKET.get())
+                .add(ModItems.COPPER_AXOLOTL_BUCKET.get())
+                .add(ModItems.COPPER_TADPOLE_BUCKET.get());
     }
 }

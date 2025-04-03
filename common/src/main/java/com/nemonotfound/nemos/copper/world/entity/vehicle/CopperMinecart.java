@@ -1,6 +1,6 @@
 package com.nemonotfound.nemos.copper.world.entity.vehicle;
 
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.item.Item;
@@ -16,11 +16,11 @@ public class CopperMinecart extends Minecart {
 
     @Override
     protected @NotNull Item getDropItem() {
-        return Items.COPPER_MINECART.get();
+        return ModItems.COPPER_MINECART.get();
     }
 
     @Override
     public @NotNull ItemStack getPickResult() {
-        return new ItemStack(Items.COPPER_MINECART.get());
+        return new ItemStack(ModItems.COPPER_MINECART.get());
     }
 }

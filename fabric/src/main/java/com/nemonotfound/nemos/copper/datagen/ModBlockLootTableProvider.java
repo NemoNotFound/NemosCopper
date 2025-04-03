@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -60,11 +60,14 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         this.dropSelf(ModBlocks.COPPER_CHAIN.get());
         this.add(ModBlocks.COPPER_LANTERN.get(), this::createSingleItemTable);
         this.add(ModBlocks.COPPER_SOUL_LANTERN.get(), this::createSingleItemTable);
-        //TODO: Add cauldron loot table
+        this.dropSelf(ModBlocks.COPPER_CAULDRON.get());
+        this.dropOther(ModBlocks.COPPER_WATER_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
+        this.dropOther(ModBlocks.COPPER_LAVA_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
+        this.dropOther(ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
     }
 
     public LootItemCondition.@NotNull Builder hasShears() {
         return MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), net.minecraft.world.item.Items.SHEARS))
-                .or( MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), Items.COPPER_SHEARS.get())));
+                .or( MatchTool.toolMatches(ItemPredicate.Builder.item().of(this.registries.lookupOrThrow(Registries.ITEM), ModItems.COPPER_SHEARS.get())));
     }
 }

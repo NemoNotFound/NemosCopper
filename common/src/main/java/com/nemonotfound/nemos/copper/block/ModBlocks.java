@@ -73,23 +73,27 @@ public class ModBlocks {
     public static final Supplier<Block> COPPER_WATER_CAULDRON = register(
             "copper_water_cauldron",
             properties -> new LayeredCopperCauldronBlock(Biome.Precipitation.RAIN, CauldronInteraction.WATER, properties),
-            BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
+            () -> BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
     );
     public static final Supplier<Block> COPPER_LAVA_CAULDRON = register(
             "copper_lava_cauldron",
             CopperLavaCauldronBlock::new,
-            BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
+            () -> BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
                     .lightLevel(blockState -> 15)
     );
     public static final Supplier<Block> COPPER_POWDER_SNOW_CAULDRON = register(
             "copper_powder_snow_cauldron",
             properties -> new LayeredCopperCauldronBlock(Biome.Precipitation.SNOW, CauldronInteraction.POWDER_SNOW, properties),
-            BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
+            () -> BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
     );
 
     public static void init() {}
 
     private static Supplier<Block> register(String id, Function<BlockBehaviour.Properties, Block> block, BlockBehaviour.Properties properties) {
         return NemosCopperCommon.REGISTRY_HELPER.registerBlock(id, block, properties);
+    }
+
+    private static Supplier<Block> register(String id, Function<BlockBehaviour.Properties, Block> block, Supplier<BlockBehaviour.Properties> propertiesSupplier) {
+        return NemosCopperCommon.REGISTRY_HELPER.registerBlock(id, block, propertiesSupplier);
     }
 }
