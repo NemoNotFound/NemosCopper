@@ -19,13 +19,12 @@ public class CopperCauldronBlock extends AbstractCauldronBlock {
     private static final float RAIN_FILL_CHANCE = 0.05F;
     private static final float POWDER_SNOW_FILL_CHANCE = 0.1F;
 
-
     public CopperCauldronBlock(BlockBehaviour.Properties properties) {
         super(properties, CauldronInteraction.EMPTY);
     }
 
     @Override
-    protected @NotNull MapCodec<? extends AbstractCauldronBlock> codec() {
+    protected @NotNull MapCodec<CopperCauldronBlock> codec() {
         return CODEC;
     }
 
