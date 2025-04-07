@@ -26,7 +26,9 @@ import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Map;
 
@@ -82,6 +84,7 @@ public interface CauldronInteractionMixin {
 //        return original;
 //    }
 
+    //TODO: Add during registration
 //    @Inject(method = "bootStrap", at = @At("HEAD"))
 //    private static void bootStrap(CallbackInfo ci) {
 //        Map<Item, CauldronInteraction> emptyMap = CauldronInteraction.EMPTY.map();
