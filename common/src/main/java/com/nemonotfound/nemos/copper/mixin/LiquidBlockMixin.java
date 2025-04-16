@@ -21,6 +21,10 @@ public class LiquidBlockMixin {
 
     @ModifyReturnValue(method = "pickupBlock", at = @At(value = "RETURN", ordinal = 0))
     private ItemStack pickupBlock(ItemStack original, @Local(argsOnly = true) LivingEntity entity) {
+        if (entity == null) {
+            return original;
+        }
+
         var mainHandItem = entity.getMainHandItem();
         var offHandItem = entity.getOffhandItem();
 
