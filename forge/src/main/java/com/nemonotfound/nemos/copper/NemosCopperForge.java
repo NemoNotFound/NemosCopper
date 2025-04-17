@@ -16,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -70,6 +71,19 @@ public class NemosCopperForge {
             EntityRenderers.register(EntityTypes.COPPER_HOPPER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.HOPPER_MINECART));
             EntityRenderers.register(EntityTypes.COPPER_SPAWNER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.SPAWNER_MINECART));
             EntityRenderers.register(EntityTypes.COPPER_TNT_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.TNT_MINECART));
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ForgeEvents {
+
+        @SubscribeEvent
+        public static void addCustomFuels(FurnaceFuelBurnTimeEvent event) {
+            var itemStack = event.getItemStack();
+
+            if (itemStack.is(Items.COPPER_LAVA_BUCKET.get())) {
+                event.setBurnTime(20000);
+            }
         }
     }
 }

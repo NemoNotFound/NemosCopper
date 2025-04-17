@@ -1,4 +1,4 @@
-# Changelog v1.3.1
+# Changelog v1.3.2
 
 ## Fixes
-- Placing a sponge in water crashes the game
+- Copper Lava Bucket can't be used as furnace fuel
