@@ -26,9 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Map;
 
@@ -74,15 +72,6 @@ public interface CauldronInteractionMixin {
 
         return original;
     }
-
-//    @ModifyExpressionValue(method = "lambda$bootStrap$1", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
-//    private static BlockState bootstrap(BlockState original, @Local(argsOnly = true) BlockState blockState) {
-//        if (blockState.is(ModBlockTags.COPPER_CAULDRONS)) {
-//            return ModBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState();
-//        }
-//
-//        return original;
-//    }
 
     //TODO: Add during registration
 //    @Inject(method = "bootStrap", at = @At("HEAD"))

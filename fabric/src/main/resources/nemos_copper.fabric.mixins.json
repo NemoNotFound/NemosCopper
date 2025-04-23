@@ -6,13 +6,14 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [
     "AbstractMinecartMixin",
+    "BeehiveBlockMixin",
+    "BoggedMixin",
+    "CauldronInteractionMixinFabric",
+    "MushroomCowMixin",
     "NewMinecartBehaviourMixin",
     "OldMinecartBehaviourMixin",
-    "SnowGolemMixin",
-    "BoggedMixin",
     "SheepMixin",
-    "MushroomCowMixin",
-    "BeehiveBlockMixin"
+    "SnowGolemMixin"
   ],
   "client": [],
   "server": [],
