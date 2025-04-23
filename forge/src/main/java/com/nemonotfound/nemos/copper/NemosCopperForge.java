@@ -81,7 +81,7 @@ public class NemosCopperForge {
         public static void addCustomFuels(FurnaceFuelBurnTimeEvent event) {
             var itemStack = event.getItemStack();
 
-            if (itemStack.is(Items.COPPER_LAVA_BUCKET.get())) {
+            if (itemStack.is(ModItems.COPPER_LAVA_BUCKET.get())) {
                 event.setBurnTime(20000);
             }
         }

@@ -60,6 +60,6 @@ public class GermanLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.COPPER_LAVA_BUCKET.get(), "Kupferlavaeimer");
         translationBuilder.add(ModItems.COPPER_POWDER_SNOW_BUCKET.get(), "Kupferpulverschneeeimer");
         translationBuilder.add(ModItems.COPPER_MILK_BUCKET.get(), "Kupfermilcheimer");
-        translationBuilder.add(ModItems.COPPER_CAULDRON.get(), "Copper Cauldron");
+        translationBuilder.add(ModItems.COPPER_CAULDRON.get(), "Kupferkessel");
     }
 }
