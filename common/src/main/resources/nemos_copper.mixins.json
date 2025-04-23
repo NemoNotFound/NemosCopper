@@ -12,6 +12,7 @@
     "CauldronInteractionMixin",
     "CodMixin",
     "LavaFluidMixin",
+    "LayeredCauldronBlockMixin",
     "LiquidBlockMixin",
     "PowderSnowBlockMixin",
     "PufferfishMixin",

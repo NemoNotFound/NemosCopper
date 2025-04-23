@@ -3,63 +3,49 @@ package com.nemonotfound.nemos.copper.mixin;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.nemonotfound.nemos.copper.block.ModBlocks;
+import com.nemonotfound.nemos.copper.helper.CauldronInteractionHelper;
 import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.tag.ModBlockTags;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.FluidState;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-import java.util.Map;
-
-import static net.minecraft.core.cauldron.CauldronInteraction.emptyBucket;
-
 @Mixin(CauldronInteraction.class)
 public interface CauldronInteractionMixin {
 
+//    @Shadow
+//    private static boolean isUnderWater(Level level, BlockPos pos) {
+//        return false;
+//    }
+
     @ModifyExpressionValue(method = "fillWaterInteraction", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
     private static BlockState fillWaterInteraction(BlockState original, @Local(argsOnly = true) BlockState blockState) {
-        if (blockState.is(ModBlockTags.COPPER_CAULDRONS)) {
-            return ModBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState();
-        }
-
-        return original;
+        return CauldronInteractionHelper
+                .retrieveBlockState(blockState, original, ModBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState());
     }
 
     @ModifyExpressionValue(method = "fillLavaInteraction", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
     private static BlockState fillLavaInteraction(BlockState original, @Local(argsOnly = true) BlockState blockState) {
-        if (blockState.is(ModBlockTags.COPPER_CAULDRONS)) {
-            return ModBlocks.COPPER_LAVA_CAULDRON.get().defaultBlockState();
-        }
-
-        return original;
+        return CauldronInteractionHelper
+                .retrieveBlockState(blockState, original, ModBlocks.COPPER_LAVA_CAULDRON.get().defaultBlockState());
     }
 
     @ModifyExpressionValue(method = "fillPowderSnowInteraction", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
     private static BlockState fillPowderSnowInteraction(BlockState original, @Local(argsOnly = true) BlockState blockState) {
-        if (blockState.is(ModBlockTags.COPPER_CAULDRONS)) {
-            return ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get().defaultBlockState();
-        }
-
-        return original;
+        return CauldronInteractionHelper
+                .retrieveBlockState(blockState, original, ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get().defaultBlockState());
     }
 
     @ModifyArg(method = "emptyBucket", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;<init>(Lnet/minecraft/world/level/ItemLike;)V"))
@@ -71,6 +57,12 @@ public interface CauldronInteractionMixin {
         }
 
         return original;
+    }
+
+    @ModifyExpressionValue(method = "fillBucket", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
+    private static BlockState fillBucket(BlockState original, @Local(argsOnly = true) BlockState blockState) {
+        return CauldronInteractionHelper
+                .retrieveBlockState(blockState, original, ModBlocks.COPPER_CAULDRON.get().defaultBlockState());
     }
 
     //TODO: Add during registration
@@ -131,80 +123,52 @@ public interface CauldronInteractionMixin {
 //
 //        nemosCopper$addDefaultInteractions(powderSnowMap);
 //    }
-
-    @ModifyExpressionValue(method = "fillBucket", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
-    private static BlockState fillBucket(BlockState original, @Local(argsOnly = true) BlockState blockState) {
-        if (blockState.is(ModBlockTags.COPPER_CAULDRONS)) {
-            return ModBlocks.COPPER_CAULDRON.get().defaultBlockState();
-        }
-
-        return original;
-    }
-
-    //TODO: Check other interactions
-
-    //TODO: Check all maps
-
-    @Unique
-    private static boolean nemosCopper$isUnderWater(Level level, BlockPos pos) {
-        FluidState fluidstate = level.getFluidState(pos.above());
-        return fluidstate.is(FluidTags.WATER);
-    }
-
-    @Unique
-    private static void nemosCopper$addDefaultInteractions(Map<Item, CauldronInteraction> interactionsMap) {
-        interactionsMap.put(ModItems.COPPER_LAVA_BUCKET.get(), CauldronInteractionMixin::nemosCopper$fillLavaInteraction);
-        interactionsMap.put(ModItems.COPPER_WATER_BUCKET.get(), CauldronInteractionMixin::nemosCopper$fillWaterInteraction);
-        interactionsMap.put(ModItems.COPPER_POWDER_SNOW_BUCKET.get(), CauldronInteractionMixin::nemosCopper$fillPowderSnowInteraction);
-    }
-
-    @Unique
-    private static InteractionResult nemosCopper$fillWaterInteraction(
-            BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack filledStack
-    ) {
-        return emptyBucket(
-                level,
-                pos,
-                player,
-                hand,
-                filledStack,
-                nemosCopper$retrieveCorrectState(state, ModBlocks.COPPER_WATER_CAULDRON.get(), Blocks.WATER_CAULDRON).setValue(LayeredCauldronBlock.LEVEL, 3),
-                SoundEvents.BUCKET_EMPTY
-        );
-    }
-
-    @Unique
-    private static InteractionResult nemosCopper$fillLavaInteraction(
-            BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack filledStack
-    ) {
-        return nemosCopper$isUnderWater(level, pos)
-                ? InteractionResult.CONSUME
-                : emptyBucket(level, pos, player, hand, filledStack, nemosCopper$retrieveCorrectState(state, ModBlocks.COPPER_LAVA_CAULDRON.get(), Blocks.LAVA_CAULDRON), SoundEvents.BUCKET_EMPTY_LAVA);
-    }
-
-    @Unique
-    private static InteractionResult nemosCopper$fillPowderSnowInteraction(
-            BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack filledStack
-    ) {
-        return nemosCopper$isUnderWater(level, pos)
-                ? InteractionResult.CONSUME
-                : emptyBucket(
-                level,
-                pos,
-                player,
-                hand,
-                filledStack,
-                nemosCopper$retrieveCorrectState(state, ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(), Blocks.POWDER_SNOW_CAULDRON).setValue(LayeredCauldronBlock.LEVEL, 3),
-                SoundEvents.BUCKET_EMPTY_POWDER_SNOW
-        );
-    }
-
-    @Unique
-    private static @NotNull BlockState nemosCopper$retrieveCorrectState(BlockState state, Block copperCauldron, Block cauldron) {
-        if (state.is(ModBlockTags.COPPER_CAULDRONS)) {
-            return copperCauldron.defaultBlockState();
-        }
-
-        return cauldron.defaultBlockState();
-    }
+//
+//    @Unique
+//    private static void nemosCopper$addDefaultInteractions(Map<Item, CauldronInteraction> interactionsMap) {
+//        interactionsMap.put(ModItems.COPPER_LAVA_BUCKET.get(), CauldronInteractionMixin::nemosCopper$fillLavaInteraction);
+//        interactionsMap.put(ModItems.COPPER_WATER_BUCKET.get(), CauldronInteractionMixin::nemosCopper$fillWaterInteraction);
+//        interactionsMap.put(ModItems.COPPER_POWDER_SNOW_BUCKET.get(), CauldronInteractionMixin::nemosCopper$fillPowderSnowInteraction);
+//    }
+//    @Unique
+//    private static InteractionResult nemosCopper$fillWaterInteraction(
+//            BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack filledStack
+//    ) {
+//        return emptyBucket(
+//                level,
+//                pos,
+//                player,
+//                hand,
+//                filledStack,
+//                nemosCopper$retrieveCorrectCauldronState(state, ModBlocks.COPPER_WATER_CAULDRON.get(), Blocks.WATER_CAULDRON).setValue(LayeredCauldronBlock.LEVEL, 3),
+//                SoundEvents.BUCKET_EMPTY
+//        );
+//    }
+//
+//    @Unique
+//    private static InteractionResult nemosCopper$fillLavaInteraction(
+//            BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack filledStack
+//    ) {
+//        return isUnderWater(level, pos)
+//                ? InteractionResult.CONSUME
+//                : emptyBucket(level, pos, player, hand, filledStack, nemosCopper$retrieveCorrectCauldronState(state, ModBlocks.COPPER_LAVA_CAULDRON.get(), Blocks.LAVA_CAULDRON), SoundEvents.BUCKET_EMPTY_LAVA);
+//    }
+//
+//    @Unique
+//    private static InteractionResult nemosCopper$fillPowderSnowInteraction(
+//            BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack filledStack
+//    ) {
+//        return isUnderWater(level, pos)
+//                ? InteractionResult.CONSUME
+//                : emptyBucket(
+//                level,
+//                pos,
+//                player,
+//                hand,
+//                filledStack,
+//                nemosCopper$retrieveCorrectCauldronState(state, ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(), Blocks.POWDER_SNOW_CAULDRON).setValue(LayeredCauldronBlock.LEVEL, 3),
+//                SoundEvents.BUCKET_EMPTY_POWDER_SNOW
+//        );
+//    }
+//
 }
