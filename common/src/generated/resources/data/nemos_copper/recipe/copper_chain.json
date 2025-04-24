@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "C": "minecraft:copper_ingot",
-    "N": "nemos_copper:copper_nugget"
+    "N": "#nemos_copper:copper_nuggets"
   },
   "pattern": [
     "N",

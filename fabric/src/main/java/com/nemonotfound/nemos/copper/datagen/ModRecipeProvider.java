@@ -189,17 +189,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_LANTERN.get())
                         .define('#', Items.TORCH)
-                        .define('X', ModItems.COPPER_NUGGET.get())
+                        .define('X', ModItemTags.COPPER_NUGGETS)
                         .pattern("XXX")
                         .pattern("X#X")
                         .pattern("XXX")
-                        .unlockedBy("has_copper_nugget", this.has(ModItems.COPPER_NUGGET.get()))
+                        .unlockedBy("has_copper_nugget", this.has(ModItemTags.COPPER_NUGGETS))
                         .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
                         .save(this.output);
 
                 this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_SOUL_LANTERN.get())
                         .define('#', Items.SOUL_TORCH)
-                        .define('X', ModItems.COPPER_NUGGET.get())
+                        .define('X', ModItemTags.COPPER_NUGGETS)
                         .pattern("XXX")
                         .pattern("X#X")
                         .pattern("XXX")
@@ -208,11 +208,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_CHAIN.get())
                         .define('C', Items.COPPER_INGOT)
-                        .define('N', ModItems.COPPER_NUGGET.get())
+                        .define('N', ModItemTags.COPPER_NUGGETS)
                         .pattern("N")
                         .pattern("C")
                         .pattern("N")
-                        .unlockedBy("has_copper_nugget", this.has(ModItems.COPPER_NUGGET.get()))
+                        .unlockedBy("has_copper_nugget", this.has(ModItemTags.COPPER_NUGGETS))
                         .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
                         .save(this.output);
 

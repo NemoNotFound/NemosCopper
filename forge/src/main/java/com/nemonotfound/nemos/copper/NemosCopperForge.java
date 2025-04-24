@@ -2,6 +2,7 @@ package com.nemonotfound.nemos.copper;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.client.renderer.entity.CopperMinecartRenderer;
+import com.nemonotfound.nemos.copper.helper.CauldronInteractionHelper;
 import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -49,6 +50,7 @@ public class NemosCopperForge {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> DispenserBlock.registerBehavior(ModItems.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
+        event.enqueueWork(CauldronInteractionHelper::addCopperBucketInteractions);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

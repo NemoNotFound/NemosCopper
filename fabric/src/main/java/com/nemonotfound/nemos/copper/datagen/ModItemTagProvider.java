@@ -56,5 +56,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.COPPER_TROPICAL_FISH_BUCKET.get())
                 .add(ModItems.COPPER_AXOLOTL_BUCKET.get())
                 .add(ModItems.COPPER_TADPOLE_BUCKET.get());
+
+        getOrCreateTagBuilder(ModItemTags.COPPER_NUGGETS)
+                .add(ModItems.COPPER_NUGGET.get());
     }
 }
