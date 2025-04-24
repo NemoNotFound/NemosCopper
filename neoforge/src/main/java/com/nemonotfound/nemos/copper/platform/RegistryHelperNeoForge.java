@@ -24,6 +24,11 @@ public class RegistryHelperNeoForge implements RegistryHelper {
     }
 
     @Override
+    public Supplier<Block> registerBlock(String id, Function<BlockBehaviour.Properties, Block> function, Supplier<BlockBehaviour.Properties> properties) {
+        return NemosCopperNeoForge.BLOCKS.register(id, () -> function.apply(properties.get().setId(createResourceKey(Registries.BLOCK, id))));
+    }
+
+    @Override
     public Supplier<Item> registerItem(String id, Function<Item.Properties, Item> function, Item.Properties properties) {
         return NemosCopperNeoForge.ITEMS.register(id, () -> function.apply(properties.setId(createResourceKey(Registries.ITEM, id))));
     }

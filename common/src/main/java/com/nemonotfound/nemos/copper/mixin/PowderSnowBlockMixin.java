@@ -2,7 +2,7 @@ package com.nemonotfound.nemos.copper.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.PowderSnowBlock;
@@ -17,8 +17,8 @@ public class PowderSnowBlockMixin {
         var mainHandItem = entity.getMainHandItem();
         var offHandItem = entity.getOffhandItem();
 
-        if (mainHandItem.is(Items.COPPER_BUCKET.get()) || offHandItem.is(Items.COPPER_BUCKET.get())) {
-            return new ItemStack(Items.COPPER_POWDER_SNOW_BUCKET.get());
+        if (mainHandItem.is(ModItems.COPPER_BUCKET.get()) || offHandItem.is(ModItems.COPPER_BUCKET.get())) {
+            return new ItemStack(ModItems.COPPER_POWDER_SNOW_BUCKET.get());
         }
 
         return original;

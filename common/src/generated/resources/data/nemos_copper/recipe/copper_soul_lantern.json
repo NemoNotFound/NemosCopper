@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": "minecraft:soul_torch",
-    "X": "nemos_copper:copper_nugget"
+    "X": "#nemos_copper:copper_nuggets"
   },
   "pattern": [
     "XXX",

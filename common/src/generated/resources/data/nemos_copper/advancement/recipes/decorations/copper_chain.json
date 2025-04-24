@@ -15,7 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": "nemos_copper:copper_nugget"
+            "items": "#nemos_copper:copper_nuggets"
           }
         ]
       },

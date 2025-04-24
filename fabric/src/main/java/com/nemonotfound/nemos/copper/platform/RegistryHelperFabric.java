@@ -24,6 +24,11 @@ public class RegistryHelperFabric implements RegistryHelper {
     }
 
     @Override
+    public Supplier<Block> registerBlock(String id, Function<BlockBehaviour.Properties, Block> function, Supplier<BlockBehaviour.Properties> properties) {
+        return registerSupplierWithResourceKey(BuiltInRegistries.BLOCK, id, key -> function.apply(properties.get().setId(key)));
+    }
+
+    @Override
     public Supplier<Item> registerItem(String id, Function<Item.Properties, Item> function, Item.Properties properties) {
         return registerSupplierWithResourceKey(BuiltInRegistries.ITEM, id, key -> function.apply(properties.setId(key)));
     }

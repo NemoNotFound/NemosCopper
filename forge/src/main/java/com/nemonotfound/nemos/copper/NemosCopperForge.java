@@ -2,7 +2,8 @@ package com.nemonotfound.nemos.copper;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.client.renderer.entity.CopperMinecartRenderer;
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.helper.CauldronInteractionHelper;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -48,7 +49,8 @@ public class NemosCopperForge {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> DispenserBlock.registerBehavior(Items.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
+        event.enqueueWork(() -> DispenserBlock.registerBehavior(ModItems.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
+        event.enqueueWork(CauldronInteractionHelper::addCopperBucketInteractions);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -81,7 +83,7 @@ public class NemosCopperForge {
         public static void addCustomFuels(FurnaceFuelBurnTimeEvent event) {
             var itemStack = event.getItemStack();
 
-            if (itemStack.is(Items.COPPER_LAVA_BUCKET.get())) {
+            if (itemStack.is(ModItems.COPPER_LAVA_BUCKET.get())) {
                 event.setBurnTime(20000);
             }
         }

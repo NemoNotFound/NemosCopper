@@ -5,23 +5,27 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_18",
   "mixins": [
-    "ItemBlockRenderTypesMixin",
-    "LavaFluidMixin",
-    "LiquidBlockMixin",
-    "BucketItemMixin",
-    "SolidBucketItemMixin",
-    "WaterFluidMixin",
-    "PowderSnowBlockMixin",
     "AbstractCowMixin",
+    "AxolotlMixin",
     "BucketableMixin",
-    "TadpoleMixin",
+    "BucketItemMixin",
+    "CauldronInteractionMixin",
     "CodMixin",
-    "SalmonMixin",
-    "TropicalFishMixin",
+    "LavaFluidMixin",
+    "LayeredCauldronBlockMixin",
+    "LiquidBlockMixin",
+    "PowderSnowBlockMixin",
     "PufferfishMixin",
-    "AxolotlMixin"
+    "SalmonMixin",
+    "SolidBucketItemMixin",
+    "TadpoleMixin",
+    "TropicalFishMixin",
+    "WaterFluidMixin"
   ],
-  "client": [],
+  "client": [
+    "BlockColorsMixin",
+    "ItemBlockRenderTypesMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

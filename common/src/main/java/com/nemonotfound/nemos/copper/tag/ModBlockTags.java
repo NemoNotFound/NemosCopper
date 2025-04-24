@@ -10,6 +10,7 @@ import static com.nemonotfound.nemos.copper.Constants.MOD_ID;
 public class ModBlockTags {
 
     public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, "incorrect_for_copper_tool"));
+    public static final TagKey<Block> COPPER_CAULDRONS = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, "copper_cauldrons"));
 
     public static void init() {}
 }

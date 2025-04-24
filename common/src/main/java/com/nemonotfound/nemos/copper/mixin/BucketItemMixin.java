@@ -2,7 +2,7 @@ package com.nemonotfound.nemos.copper.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BucketItem;
@@ -18,7 +18,7 @@ public class BucketItemMixin {
         if (!player.hasInfiniteMaterials()) {
 
             if (bucketStack.is(ModItemTags.COPPER_BUCKETS)) {
-                return new ItemStack(Items.COPPER_BUCKET.get());
+                return new ItemStack(ModItems.COPPER_BUCKET.get());
             }
         }
 

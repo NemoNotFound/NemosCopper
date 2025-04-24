@@ -1,7 +1,8 @@
 package com.nemonotfound.nemos.copper.events;
 
 import com.nemonotfound.nemos.copper.Constants;
-import com.nemonotfound.nemos.copper.item.Items;
+import com.nemonotfound.nemos.copper.helper.CauldronInteractionHelper;
+import com.nemonotfound.nemos.copper.item.ModItems;
 import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.bus.api.EventPriority;
@@ -14,6 +15,7 @@ public class ModEvents {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     private static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> DispenserBlock.registerBehavior(Items.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
+        event.enqueueWork(() -> DispenserBlock.registerBehavior(ModItems.COPPER_SHEARS.get().asItem(), new ShearsDispenseItemBehavior()));
+        event.enqueueWork(CauldronInteractionHelper::addCopperBucketInteractions);
     }
 }

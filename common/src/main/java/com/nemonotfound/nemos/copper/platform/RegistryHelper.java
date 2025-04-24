@@ -13,6 +13,7 @@ import java.util.function.Supplier;
 public interface RegistryHelper {
 
     Supplier<Block> registerBlock(String id, Function<BlockBehaviour.Properties, Block> function, BlockBehaviour.Properties properties);
+    Supplier<Block> registerBlock(String id, Function<BlockBehaviour.Properties, Block> function, Supplier<BlockBehaviour.Properties> properties);
     Supplier<Item> registerItem(String id, Function<Item.Properties, Item> function, Item.Properties properties);
     Supplier<Item> registerItem(String id, Function<Item.Properties, Item> function, Supplier<Item.Properties> properties);
     <T extends Entity> Supplier<EntityType<T>> registerEntity(String id, Supplier<EntityType<T>> entity);
