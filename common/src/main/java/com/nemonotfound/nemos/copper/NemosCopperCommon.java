@@ -7,8 +7,6 @@ import com.nemonotfound.nemos.copper.platform.RegistryHelper;
 import com.nemonotfound.nemos.copper.tag.ModBlockTags;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
 import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ServiceLoader;
 
@@ -25,21 +23,5 @@ public class NemosCopperCommon {
         EntityTypes.init();
         ModItems.init();
         ModCreativeModeTabs.init();
-
-        //TODO: Remove later
-//        for (BlockState blockState : ModBlocks.COPPER_CAULDRON.get().getStateDefinition().getPossibleStates()) {
-//            Block.BLOCK_STATE_REGISTRY.add(blockState);
-//            blockState.initCache();
-//        }
-//
-//        for (BlockState blockState : ModBlocks.COPPER_WATER_CAULDRON.get().getStateDefinition().getPossibleStates()) {
-//            Block.BLOCK_STATE_REGISTRY.add(blockState);
-//            blockState.initCache();
-//        }
-//
-//        for (BlockState blockState : ModBlocks.COPPER_LAVA_CAULDRON.get().getStateDefinition().getPossibleStates()) {
-//            Block.BLOCK_STATE_REGISTRY.add(blockState);
-//            blockState.initCache();
-//        }
     }
 }
