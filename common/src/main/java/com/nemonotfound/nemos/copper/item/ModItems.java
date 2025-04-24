@@ -20,17 +20,17 @@ import java.util.function.Supplier;
 
 public class ModItems {
 
-    public static Supplier<Item> COPPER_RAIL = registerBlockItem("copper_rail", ModBlocks.COPPER_RAIL);
-    public static Supplier<Item> COPPER_ACTIVATOR_RAIL = registerBlockItem("copper_activator_rail", ModBlocks.COPPER_ACTIVATOR_RAIL);
-    public static Supplier<Item> COPPER_DETECTOR_RAIL = registerBlockItem("copper_detector_rail", ModBlocks.COPPER_DETECTOR_RAIL);
-    public static Supplier<Item> COPPER_POWERED_RAIL = registerBlockItem("copper_powered_rail", ModBlocks.COPPER_POWERED_RAIL);
-    public static Supplier<Item> COPPER_MINECART = register("copper_minecart", properties -> new MinecartItem(EntityTypes.COPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
-    public static Supplier<Item> COPPER_CHEST_MINECART = register("copper_chest_minecart", properties -> new MinecartItem(EntityTypes.COPPER_CHEST_MINECART.get(), properties), new Item.Properties().stacksTo(1));
-    public static Supplier<Item> COPPER_FURNACE_MINECART = register("copper_furnace_minecart", properties -> new MinecartItem(EntityTypes.COPPER_FURNACE_MINECART.get(), properties), new Item.Properties().stacksTo(1));
-    public static Supplier<Item> COPPER_TNT_MINECART = register("copper_tnt_minecart", properties -> new MinecartItem(EntityTypes.COPPER_TNT_MINECART.get(), properties), new Item.Properties().stacksTo(1));
-    public static Supplier<Item> COPPER_HOPPER_MINECART = register("copper_hopper_minecart", properties -> new MinecartItem(EntityTypes.COPPER_HOPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
-    public static Supplier<Item> COPPER_COMMAND_BLOCK_MINECART = register("copper_command_block_minecart", properties -> new MinecartItem(EntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), properties), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
-    public static Supplier<Item> COPPER_SHEARS = register("copper_shears", ShearsItem::new, () -> new Item.Properties().durability(188).component(DataComponents.TOOL, ShearsItem.createToolProperties()));
+    public static final Supplier<Item> COPPER_RAIL = registerBlockItem("copper_rail", ModBlocks.COPPER_RAIL);
+    public static final Supplier<Item> COPPER_ACTIVATOR_RAIL = registerBlockItem("copper_activator_rail", ModBlocks.COPPER_ACTIVATOR_RAIL);
+    public static final Supplier<Item> COPPER_DETECTOR_RAIL = registerBlockItem("copper_detector_rail", ModBlocks.COPPER_DETECTOR_RAIL);
+    public static final Supplier<Item> COPPER_POWERED_RAIL = registerBlockItem("copper_powered_rail", ModBlocks.COPPER_POWERED_RAIL);
+    public static final Supplier<Item> COPPER_MINECART = register("copper_minecart", properties -> new MinecartItem(EntityTypes.COPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
+    public static final Supplier<Item> COPPER_CHEST_MINECART = register("copper_chest_minecart", properties -> new MinecartItem(EntityTypes.COPPER_CHEST_MINECART.get(), properties), new Item.Properties().stacksTo(1));
+    public static final Supplier<Item> COPPER_FURNACE_MINECART = register("copper_furnace_minecart", properties -> new MinecartItem(EntityTypes.COPPER_FURNACE_MINECART.get(), properties), new Item.Properties().stacksTo(1));
+    public static final Supplier<Item> COPPER_TNT_MINECART = register("copper_tnt_minecart", properties -> new MinecartItem(EntityTypes.COPPER_TNT_MINECART.get(), properties), new Item.Properties().stacksTo(1));
+    public static final Supplier<Item> COPPER_HOPPER_MINECART = register("copper_hopper_minecart", properties -> new MinecartItem(EntityTypes.COPPER_HOPPER_MINECART.get(), properties), new Item.Properties().stacksTo(1));
+    public static final Supplier<Item> COPPER_COMMAND_BLOCK_MINECART = register("copper_command_block_minecart", properties -> new MinecartItem(EntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), properties), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
+    public static final Supplier<Item> COPPER_SHEARS = register("copper_shears", ShearsItem::new, () -> new Item.Properties().durability(188).component(DataComponents.TOOL, ShearsItem.createToolProperties()));
     public static final Supplier<Item> COPPER_SWORD = register("copper_sword", () -> new Item.Properties().sword(ModToolMaterials.COPPER, 3.0F, -2.4F));
     public static final Supplier<Item> COPPER_SHOVEL = register("copper_shovel", properties -> new ShovelItem(ModToolMaterials.COPPER, 1.5F, -3.0F, properties));
     public static final Supplier<Item> COPPER_PICKAXE = register("copper_pickaxe", () -> new Item.Properties().pickaxe(ModToolMaterials.COPPER, 1.0F, -2.8F));
