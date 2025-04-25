@@ -61,5 +61,26 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.COPPER_POWDER_SNOW_BUCKET.get(), "Copper Powder Snow Bucket");
         translationBuilder.add(ModItems.COPPER_MILK_BUCKET.get(), "Copper Milk Bucket");
         translationBuilder.add(ModItems.COPPER_CAULDRON.get(), "Copper Cauldron");
+        translationBuilder.add(ModItems.COPPER_SHIELD.get(), "Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".black", "Black Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".red", "Red Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".green", "Green Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".lime", "Lime Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".yellow", "Yellow Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".brown", "Brown Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".purple", "Purple Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".light_blue", "Light Blue Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".blue", "Blue Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".cyan", "Cyan Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".light_gray", "Light Gray Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".gray", "Gray Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".pink", "Pink Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".magenta", "Magenta Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".orange", "Orange Copper Shield");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".white", "White Copper Shield");
+    }
+
+    public static String getCopperShieldDescriptionId() {
+        return ModItems.COPPER_SHIELD.get().getDescriptionId();
     }
 }

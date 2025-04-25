@@ -34,6 +34,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.COPPER_HOE.get());
                 output.accept(ModItems.COPPER_SHEARS.get());
                 output.accept(ModItems.COPPER_SWORD.get());
+                output.accept(ModItems.COPPER_SHIELD.get());
                 output.accept(ModItems.COPPER_HELMET.get());
                 output.accept(ModItems.COPPER_CHESTPLATE.get());
                 output.accept(ModItems.COPPER_LEGGINGS.get());

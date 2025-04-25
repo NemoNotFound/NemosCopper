@@ -10,14 +10,18 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.client.renderer.special.ShieldSpecialRenderer;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 
 import static com.nemonotfound.nemos.copper.client.data.models.model.ModelTemplates.*;
-import static com.nemonotfound.nemos.copper.client.data.models.model.ModelTemplates.COPPER_CAULDRON_LEVEL2;
 import static net.minecraft.client.data.models.BlockModelGenerators.createSimpleBlock;
 import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 import static net.minecraft.client.data.models.ItemModelGenerators.*;
@@ -73,6 +77,8 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.generateTrimmableItem(ModItems.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_CHESTPLATE, false);
         itemModelGenerator.generateTrimmableItem(ModItems.COPPER_LEGGINGS.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_LEGGINGS, false);
         itemModelGenerator.generateTrimmableItem(ModItems.COPPER_BOOTS.get(), ModEquipmentAssets.COPPER, TRIM_PREFIX_BOOTS, false);
+
+        generateCustomShield(itemModelGenerator, ModItems.COPPER_SHIELD.get());
     }
 
     private void createCauldrons(BlockModelGenerators blockModelGenerators) {
@@ -169,5 +175,11 @@ public class ModelProvider extends FabricModelProvider {
                                         )
                         )
         );
+    }
+
+    private void generateCustomShield(ItemModelGenerators itemModelGenerators, Item shieldItem) {
+        ItemModel.Unbaked unbaked = ItemModelUtils.specialModel(ModelLocationUtils.getModelLocation(Items.SHIELD), new ShieldSpecialRenderer.Unbaked());
+        ItemModel.Unbaked unbaked2 = ItemModelUtils.specialModel(ModelLocationUtils.getModelLocation(Items.SHIELD, "_blocking"), new ShieldSpecialRenderer.Unbaked());
+        itemModelGenerators.generateBooleanDispatch(shieldItem, ItemModelUtils.isUsingItem(), unbaked2, unbaked);
     }
 }

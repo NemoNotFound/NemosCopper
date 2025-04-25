@@ -17,6 +17,7 @@
     "PowderSnowBlockMixin",
     "PufferfishMixin",
     "SalmonMixin",
+    "ShieldDecorationRecipeMixin",
     "SolidBucketItemMixin",
     "TadpoleMixin",
     "TropicalFishMixin",
@@ -24,7 +25,8 @@
   ],
   "client": [
     "BlockColorsMixin",
-    "ItemBlockRenderTypesMixin"
+    "ItemBlockRenderTypesMixin",
+    "ShieldSpecialRendererMixin"
   ],
   "server": [],
   "injectors": {

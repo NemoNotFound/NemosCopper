@@ -9,6 +9,8 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
+import static com.nemonotfound.nemos.copper.datagen.EnglishLanguageProvider.getCopperShieldDescriptionId;
+
 public class GermanLanguageProvider extends FabricLanguageProvider {
 
     public GermanLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
@@ -61,5 +63,22 @@ public class GermanLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.COPPER_POWDER_SNOW_BUCKET.get(), "Kupferpulverschneeeimer");
         translationBuilder.add(ModItems.COPPER_MILK_BUCKET.get(), "Kupfermilcheimer");
         translationBuilder.add(ModItems.COPPER_CAULDRON.get(), "Kupferkessel");
+        translationBuilder.add(ModItems.COPPER_SHIELD.get(), "Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".black", "Schwarzer Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".red", "Roter Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".green", "Grüner Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".lime", "Hellgrüner Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".yellow", "Gelber Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".brown", "Brauner Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".purple", "Violetter Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".light_blue", "Hellblauer Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".blue", "Blauer Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".cyan", "Türkiser Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".light_gray", "Hellgrauer Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".gray", "Grauer Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".pink", "Rosa Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".magenta", "Magenta Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".orange", "Oranger Kupferschild");
+        translationBuilder.add(getCopperShieldDescriptionId() + ".white", "Weißer Kupferschild");
     }
 }
