@@ -1,9 +1,13 @@
-# Changelog v1.4
+# Changelog v1.5
 
 ## Additions
-- Added **Copper Cauldron**
-- Added item tag **copper_nuggets** for easier mod compatibility
+- Added copper bars
+- Added dependency
+  - Nemo's Tags
 
 ## Changes
-- Copper buckets now work on cauldrons
-- All recipes that required copper nuggets now use the new item tag **copper_nuggets** as ingredient
+- Internal changes & cleanup
+
+## Fixes
+- Copper bucket can't milk goats
+- Copper buckets can't be used in dispenser

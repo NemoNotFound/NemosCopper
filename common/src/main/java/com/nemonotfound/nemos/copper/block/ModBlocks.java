@@ -86,6 +86,9 @@ public class ModBlocks {
             properties -> new LayeredCopperCauldronBlock(Biome.Precipitation.SNOW, CauldronInteraction.POWDER_SNOW, properties),
             () -> BlockBehaviour.Properties.ofLegacyCopy(COPPER_CAULDRON.get())
     );
+    public static final Supplier<Block> COPPER_BARS = register(
+            "copper_bars", IronBarsBlock::new, BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).noOcclusion()
+    );
 
     public static void init() {}
 

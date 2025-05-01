@@ -6,15 +6,22 @@ import com.nemonotfound.nemos.copper.item.equipment.ModArmorMaterials;
 import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BannerPatternLayers;
 import net.minecraft.world.level.material.Fluids;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -54,8 +61,42 @@ public class ModItems {
     public static final Supplier<Item> COPPER_COD_BUCKET = register("copper_cod_bucket", (properties) -> new MobBucketItem(EntityType.COD, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
     public static final Supplier<Item> COPPER_TROPICAL_FISH_BUCKET = register("copper_tropical_fish_bucket", (properties) -> new MobBucketItem(EntityType.TROPICAL_FISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
     public static final Supplier<Item> COPPER_AXOLOTL_BUCKET = register("copper_axolotl_bucket", (properties) -> new MobBucketItem(EntityType.AXOLOTL, Fluids.WATER, SoundEvents.BUCKET_EMPTY_AXOLOTL, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
-    public static final Supplier<Item> COPPER_TADPOLE_BUCKET = register("copper_tadpole_bucket", (properties) -> new MobBucketItem(EntityType.TADPOLE, Fluids.WATER, SoundEvents.BUCKET_EMPTY_TADPOLE, properties), new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
+    public static final Supplier<Item> COPPER_TADPOLE_BUCKET = register(
+            "copper_tadpole_bucket",
+            (properties) -> new MobBucketItem(
+                    EntityType.TADPOLE,
+                    Fluids.WATER,
+                    SoundEvents.BUCKET_EMPTY_TADPOLE,
+                    properties
+            ),
+            new Item.Properties()
+                    .stacksTo(1)
+                    .component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY)
+    );
     public static final Supplier<Item> COPPER_CAULDRON = registerBlockItem("copper_cauldron", ModBlocks.COPPER_CAULDRON);
+    public static final Supplier<Item> COPPER_SHIELD = register(
+            "copper_shield",
+            ShieldItem::new,
+            () -> new Item.Properties()
+                    .durability(236)
+                    .component(DataComponents.BANNER_PATTERNS, BannerPatternLayers.EMPTY)
+                    .repairable(ItemTags.WOODEN_TOOL_MATERIALS)
+                    .equippableUnswappable(EquipmentSlot.OFFHAND)
+                    .component(
+                            DataComponents.BLOCKS_ATTACKS,
+                            new BlocksAttacks(
+                                    0.25F,
+                                    1.0F,
+                                    List.of(new BlocksAttacks.DamageReduction(90.0F, Optional.empty(), 0.0F, 1.0F)),
+                                    new BlocksAttacks.ItemDamageFunction(3.0F, 1.0F, 1.0F),
+                                    Optional.of(DamageTypeTags.BYPASSES_SHIELD),
+                                    Optional.of(SoundEvents.SHIELD_BLOCK),
+                                    Optional.of(SoundEvents.SHIELD_BREAK)
+                            )
+                    )
+                    .component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK)
+    );
+    public static final Supplier<Item> COPPER_BARS = registerBlockItem("copper_bars", ModBlocks.COPPER_BARS);
 
     public static void init() {}
 

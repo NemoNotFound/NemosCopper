@@ -9,6 +9,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
@@ -229,6 +230,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("###")
                         .unlockedBy("has_water_bucket", this.has(Items.WATER_BUCKET))
                         .unlockedBy("has_copper_bucket", this.has(ModItems.COPPER_WATER_BUCKET.get()))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SHIELD.get())
+                        .define('W', ItemTags.WOODEN_TOOL_MATERIALS)
+                        .define('o', Items.COPPER_INGOT)
+                        .pattern("WoW")
+                        .pattern("WWW")
+                        .pattern(" W ")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
+
+                this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_BARS.get(), 16)
+                        .define('#', Items.COPPER_INGOT)
+                        .pattern("###")
+                        .pattern("###")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
                         .save(this.output);
             }
         };

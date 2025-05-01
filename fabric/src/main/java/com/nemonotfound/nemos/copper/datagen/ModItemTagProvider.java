@@ -2,6 +2,7 @@ package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
+import com.nemonotfound.nemos.tags.tags.NemosItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -59,5 +60,20 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ModItemTags.COPPER_NUGGETS)
                 .add(ModItems.COPPER_NUGGET.get());
+
+        getOrCreateTagBuilder(NemosItemTags.SHEARS)
+                .add(ModItems.COPPER_SHEARS.get());
+
+        getOrCreateTagBuilder(NemosItemTags.EMPTY_BUCKETS)
+                .add(ModItems.COPPER_BUCKET.get());
+
+        getOrCreateTagBuilder(NemosItemTags.WATER_BUCKETS)
+                .add(ModItems.COPPER_WATER_BUCKET.get());
+
+        getOrCreateTagBuilder(NemosItemTags.LAVA_BUCKETS)
+                .add(ModItems.COPPER_LAVA_BUCKET.get());
+
+        getOrCreateTagBuilder(NemosItemTags.POWDER_SNOW_BUCKETS)
+                .add(ModItems.COPPER_POWDER_SNOW_BUCKET.get());
     }
 }
