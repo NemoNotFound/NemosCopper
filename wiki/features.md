@@ -1,6 +1,7 @@
 Nemo's Copper adds new blocks, entities & items. Here is a list of everything added.
 
 # Blocks
+- Copper Bars
 - Copper Chain
 - Copper Lantern
 - Copper Soul Lantern
