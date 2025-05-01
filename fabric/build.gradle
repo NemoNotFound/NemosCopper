@@ -10,6 +10,7 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    modCompileOnly "maven.modrinth:nemos-tags:${nemos_tags_version}-fabric"
 }
 
 base {
@@ -18,6 +19,20 @@ base {
 
 fabricApi {
     configureDataGeneration()
+}
+
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 loom {

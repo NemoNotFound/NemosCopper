@@ -23,5 +23,6 @@ public class NemosCopperClientFabric implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_LANTERN.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_SOUL_LANTERN.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_CHAIN.get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_BARS.get(), RenderType.cutout());
     }
 }

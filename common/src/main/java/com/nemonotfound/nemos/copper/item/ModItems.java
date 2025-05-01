@@ -96,6 +96,7 @@ public class ModItems {
                     )
                     .component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK)
     );
+    public static final Supplier<Item> COPPER_BARS = registerBlockItem("copper_bars", ModBlocks.COPPER_BARS);
 
     public static void init() {}
 

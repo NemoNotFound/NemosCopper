@@ -2,6 +2,7 @@ package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.block.ModBlocks;
 import com.nemonotfound.nemos.copper.tag.ModBlockTags;
+import com.nemonotfound.nemos.tags.tags.NemosBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -43,5 +44,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COPPER_LAVA_CAULDRON.get())
                 .add(ModBlocks.COPPER_WATER_CAULDRON.get())
                 .add(ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get());
+
+        getOrCreateTagBuilder(NemosBlockTags.POWERED_RAILS)
+                .add(ModBlocks.COPPER_POWERED_RAIL.get());
+
+        getOrCreateTagBuilder(NemosBlockTags.BARS)
+                .add(ModBlocks.COPPER_BARS.get());
     }
 }

@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(NewMinecartBehavior.class)
 public class NewMinecartBehaviourMixin {
 
+    //TODO: use tag
+
     @ModifyExpressionValue(method = "calculateHaltTrackSpeed", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z"))
     private boolean calculateHaltTrackSpeed(boolean original, @Local(argsOnly = true) BlockState state) {
         return original || state.is(ModBlocks.COPPER_POWERED_RAIL.get());

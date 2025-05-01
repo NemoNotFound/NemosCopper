@@ -15,7 +15,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(BrazilianPortugueseLanguageProvider::new);
         pack.addProvider(EnglishLanguageProvider::new);
         pack.addProvider(ModRecipeProvider::new);
-        pack.addProvider(ModBlockLootTableProvider::new);
+        pack.addProvider(BlockLootTableProvider::new);
         pack.addProvider(ModItemTagProvider::new);
         pack.addProvider(ModBlockTagProvider::new);
     }

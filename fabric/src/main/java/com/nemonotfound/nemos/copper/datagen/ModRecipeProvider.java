@@ -240,6 +240,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" W ")
                         .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
                         .save(this.output);
+
+                this.shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_BARS.get(), 16)
+                        .define('#', Items.COPPER_INGOT)
+                        .pattern("###")
+                        .pattern("###")
+                        .unlockedBy("has_copper_ingot", this.has(Items.COPPER_INGOT))
+                        .save(this.output);
             }
         };
     }

@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ItemModelUtils;
@@ -18,12 +20,13 @@ import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.special.ShieldSpecialRenderer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static com.nemonotfound.nemos.copper.client.data.models.model.ModelTemplates.*;
-import static net.minecraft.client.data.models.BlockModelGenerators.createSimpleBlock;
-import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
 import static net.minecraft.client.data.models.ItemModelGenerators.*;
 
 public class ModelProvider extends FabricModelProvider {
@@ -44,6 +47,7 @@ public class ModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleFlatItemModel(ModItems.COPPER_CHAIN.get());
 
         createCauldrons(blockStateModelGenerator);
+        createIronBars(blockStateModelGenerator, ModBlocks.COPPER_BARS.get());
     }
 
     @Override
@@ -175,6 +179,17 @@ public class ModelProvider extends FabricModelProvider {
                                         )
                         )
         );
+    }
+
+    private void createIronBars(BlockModelGenerators blockModelGenerators, Block block) {
+        MultiVariant multiVariant = plainVariant(ModelLocationUtils.getModelLocation(block, "_post_ends"));
+        MultiVariant multiVariant2 = plainVariant(ModelLocationUtils.getModelLocation(block, "_post"));
+        MultiVariant multiVariant3 = plainVariant(ModelLocationUtils.getModelLocation(block, "_cap"));
+        MultiVariant multiVariant4 = plainVariant(ModelLocationUtils.getModelLocation(block, "_cap_alt"));
+        MultiVariant multiVariant5 = plainVariant(ModelLocationUtils.getModelLocation(block, "_side"));
+        MultiVariant multiVariant6 = plainVariant(ModelLocationUtils.getModelLocation(block, "_side_alt"));
+        blockModelGenerators.blockStateOutput.accept(MultiPartGenerator.multiPart(block).with(multiVariant).with(condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.EAST, false).term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.WEST, false), multiVariant2).with(condition().term(BlockStateProperties.NORTH, true).term(BlockStateProperties.EAST, false).term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.WEST, false), multiVariant3).with(condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.EAST, true).term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.WEST, false), multiVariant3.with(Y_ROT_90)).with(condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.EAST, false).term(BlockStateProperties.SOUTH, true).term(BlockStateProperties.WEST, false), multiVariant4).with(condition().term(BlockStateProperties.NORTH, false).term(BlockStateProperties.EAST, false).term(BlockStateProperties.SOUTH, false).term(BlockStateProperties.WEST, true), multiVariant4.with(Y_ROT_90)).with(condition().term(BlockStateProperties.NORTH, true), multiVariant5).with(condition().term(BlockStateProperties.EAST, true), multiVariant5.with(Y_ROT_90)).with(condition().term(BlockStateProperties.SOUTH, true), multiVariant6).with(condition().term(BlockStateProperties.WEST, true), multiVariant6.with(Y_ROT_90)));
+        blockModelGenerators.registerSimpleFlatItemModel(block);
     }
 
     private void generateCustomShield(ItemModelGenerators itemModelGenerators, Item shieldItem) {

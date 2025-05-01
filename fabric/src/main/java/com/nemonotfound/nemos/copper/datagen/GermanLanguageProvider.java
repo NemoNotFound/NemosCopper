@@ -80,5 +80,6 @@ public class GermanLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(getCopperShieldDescriptionId() + ".magenta", "Magenta Kupferschild");
         translationBuilder.add(getCopperShieldDescriptionId() + ".orange", "Oranger Kupferschild");
         translationBuilder.add(getCopperShieldDescriptionId() + ".white", "Weißer Kupferschild");
+        translationBuilder.add(ModItems.COPPER_BARS.get(), "Kupfergitter");
     }
 }

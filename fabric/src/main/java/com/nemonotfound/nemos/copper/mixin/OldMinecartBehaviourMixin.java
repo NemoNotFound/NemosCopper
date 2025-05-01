@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(OldMinecartBehavior.class)
 public class OldMinecartBehaviourMixin {
 
+    //TODO: Use tag
+
     @ModifyExpressionValue(method = "moveAlongTrack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z"))
     private boolean moveAlongTrack(boolean original, @Local BlockState state) {
         return original || state.is(ModBlocks.COPPER_POWERED_RAIL.get());

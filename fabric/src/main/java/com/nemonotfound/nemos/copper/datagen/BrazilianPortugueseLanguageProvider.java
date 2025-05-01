@@ -80,5 +80,6 @@ public class BrazilianPortugueseLanguageProvider extends FabricLanguageProvider 
         translationBuilder.add(getCopperShieldDescriptionId() + ".magenta", "Escudo de Cobre Magenta");
         translationBuilder.add(getCopperShieldDescriptionId() + ".orange", "Escudo de Cobre Laranja");
         translationBuilder.add(getCopperShieldDescriptionId() + ".white", "Escudo de Cobre Branco");
+        translationBuilder.add(ModItems.COPPER_BARS.get(), "Barras de Cobre");
     }
 }

@@ -78,6 +78,7 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(getCopperShieldDescriptionId() + ".magenta", "Magenta Copper Shield");
         translationBuilder.add(getCopperShieldDescriptionId() + ".orange", "Orange Copper Shield");
         translationBuilder.add(getCopperShieldDescriptionId() + ".white", "White Copper Shield");
+        translationBuilder.add(ModItems.COPPER_BARS.get(), "Copper Bars");
     }
 
     public static String getCopperShieldDescriptionId() {
