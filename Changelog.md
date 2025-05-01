@@ -1,6 +1,7 @@
 # Changelog v1.5
 
 ## Additions
+- Added copper shield
 - Added copper bars
 - Added dependency
   - Nemo's Tags

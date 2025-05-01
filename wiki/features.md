@@ -18,6 +18,7 @@ Nemo's Copper adds new blocks, entities & items. Here is a list of everything ad
 - Copper Axe
 - Copper Shears
 - Copper Sword
+- Copper Shield
 - Copper Helmet
 - Copper Chestplate
 - Copper Leggings
