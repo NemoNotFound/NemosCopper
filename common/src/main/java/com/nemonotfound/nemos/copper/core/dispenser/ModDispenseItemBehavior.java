@@ -1,11 +1,9 @@
 package com.nemonotfound.nemos.copper.core.dispenser;
 
 import com.nemonotfound.nemos.copper.item.ModItems;
+import com.nemonotfound.nemos.copper.world.entity.ModEntityTypes;
 import com.nemonotfound.nemos.tags.interfaces.CustomBucketPickup;
-import net.minecraft.core.dispenser.BlockSource;
-import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.core.dispenser.DispenseItemBehavior;
-import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
+import net.minecraft.core.dispenser.*;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -65,5 +63,11 @@ public interface ModDispenseItemBehavior {
                 }
             }
         });
+        DispenserBlock.registerBehavior(ModItems.COPPER_MINECART.get(), new MinecartDispenseItemBehavior(ModEntityTypes.COPPER_MINECART.get()));
+        DispenserBlock.registerBehavior(ModItems.COPPER_CHEST_MINECART.get(), new MinecartDispenseItemBehavior(ModEntityTypes.COPPER_CHEST_MINECART.get()));
+        DispenserBlock.registerBehavior(ModItems.COPPER_FURNACE_MINECART.get(), new MinecartDispenseItemBehavior(ModEntityTypes.COPPER_FURNACE_MINECART.get()));
+        DispenserBlock.registerBehavior(ModItems.COPPER_TNT_MINECART.get(), new MinecartDispenseItemBehavior(ModEntityTypes.COPPER_TNT_MINECART.get()));
+        DispenserBlock.registerBehavior(ModItems.COPPER_HOPPER_MINECART.get(), new MinecartDispenseItemBehavior(ModEntityTypes.COPPER_HOPPER_MINECART.get()));
+        DispenserBlock.registerBehavior(ModItems.COPPER_COMMAND_BLOCK_MINECART.get(), new MinecartDispenseItemBehavior(ModEntityTypes.COPPER_COMMAND_BLOCK_MINECART.get()));
     }
 }

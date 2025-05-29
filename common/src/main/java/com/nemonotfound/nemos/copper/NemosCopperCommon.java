@@ -6,7 +6,7 @@ import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.platform.RegistryHelper;
 import com.nemonotfound.nemos.copper.tag.ModBlockTags;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
-import com.nemonotfound.nemos.copper.world.entity.EntityTypes;
+import com.nemonotfound.nemos.copper.world.entity.ModEntityTypes;
 
 import java.util.ServiceLoader;
 
@@ -20,7 +20,7 @@ public class NemosCopperCommon {
         ModItemTags.init();
         ModBlockTags.init();
         ModBlocks.init();
-        EntityTypes.init();
+        ModEntityTypes.init();
         ModItems.init();
         ModCreativeModeTabs.init();
     }

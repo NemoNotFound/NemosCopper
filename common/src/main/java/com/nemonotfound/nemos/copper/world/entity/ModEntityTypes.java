@@ -12,7 +12,7 @@ import net.minecraft.world.entity.MobCategory;
 
 import java.util.function.Supplier;
 
-public class EntityTypes {
+public class ModEntityTypes {
 
     public static final Supplier<EntityType<CopperMinecartChest>> COPPER_CHEST_MINECART = register("copper_chest_minecart",
             EntityType.Builder.of(CopperMinecartChest::new, MobCategory.MISC)

@@ -1,4 +1,4 @@
-# Changelog v1.5.0.1
+# Changelog v1.5.1
 
 ## Fixes
-- Fixed instant crash
+- Copper Minecarts can be dispensed now
