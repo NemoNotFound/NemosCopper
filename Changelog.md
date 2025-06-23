@@ -1,4 +1,4 @@
-# Changelog v1.5.1
+# Changelog v1.5.2
 
 ## Fixes
-- Copper Minecarts can be dispensed now
+- Copper armor can be enchanted in the enchanting table now

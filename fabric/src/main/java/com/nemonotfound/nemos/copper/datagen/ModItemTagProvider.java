@@ -75,5 +75,17 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(NemosItemTags.POWDER_SNOW_BUCKETS)
                 .add(ModItems.COPPER_POWDER_SNOW_BUCKET.get());
+
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+                .add(ModItems.COPPER_BOOTS.get());
+
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+                .add(ModItems.COPPER_LEGGINGS.get());
+
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+                .add(ModItems.COPPER_CHESTPLATE.get());
+
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+                .add(ModItems.COPPER_HELMET.get());
     }
 }
