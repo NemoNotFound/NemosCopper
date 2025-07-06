@@ -1,8 +1,5 @@
-# Changelog v2.0
+# Changelog v2.0.1
 
-## Additions
-- Added copper hopper
-
-## Breaking Change
-- Refactored internal code structure
-    - **For Developers:** Package naming changed from `nemonotfound` to `devnemo`
+## Fixes
+- Copper hopper doesn't work on server
+- Copper hopper can't be broken faster with pickaxe
