@@ -1,7 +1,7 @@
 package com.nemonotfound.nemos.copper.helper;
 
 import com.nemonotfound.nemos.copper.item.ModItems;
-import com.nemonotfound.nemos.tags.helper.ItemReplacementMaps;
+import com.devnemo.nemos.tags.helper.ItemReplacementMaps;
 
 public class ItemReplacementHelper {
 

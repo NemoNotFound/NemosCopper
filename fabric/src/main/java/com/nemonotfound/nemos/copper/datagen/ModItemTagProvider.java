@@ -2,7 +2,7 @@ package com.nemonotfound.nemos.copper.datagen;
 
 import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.tag.ModItemTags;
-import com.nemonotfound.nemos.tags.tags.NemosItemTags;
+import com.devnemo.nemos.tags.tags.NemosItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -18,34 +18,34 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        getOrCreateTagBuilder(ModItemTags.COPPER_TOOL_MATERIALS)
+        valueLookupBuilder(ModItemTags.COPPER_TOOL_MATERIALS)
                 .add(net.minecraft.world.item.Items.COPPER_INGOT);
 
-        getOrCreateTagBuilder(ModItemTags.REPAIRS_COPPER_ARMOR)
+        valueLookupBuilder(ModItemTags.REPAIRS_COPPER_ARMOR)
                 .add(net.minecraft.world.item.Items.COPPER_INGOT);
 
-        getOrCreateTagBuilder(ItemTags.AXES)
+        valueLookupBuilder(ItemTags.AXES)
                 .add(ModItems.COPPER_AXE.get());
 
-        getOrCreateTagBuilder(ItemTags.HOES)
+        valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.COPPER_HOE.get());
 
-        getOrCreateTagBuilder(ItemTags.PICKAXES)
+        valueLookupBuilder(ItemTags.PICKAXES)
                 .add(ModItems.COPPER_PICKAXE.get());
 
-        getOrCreateTagBuilder(ItemTags.SHOVELS)
+        valueLookupBuilder(ItemTags.SHOVELS)
                 .add(ModItems.COPPER_SHOVEL.get());
 
-        getOrCreateTagBuilder(ItemTags.SWORDS)
+        valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.COPPER_SWORD.get());
 
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.COPPER_HELMET.get())
                 .add(ModItems.COPPER_CHESTPLATE.get())
                 .add(ModItems.COPPER_LEGGINGS.get())
                 .add(ModItems.COPPER_BOOTS.get());
 
-        getOrCreateTagBuilder(ModItemTags.COPPER_BUCKETS)
+        valueLookupBuilder(ModItemTags.COPPER_BUCKETS)
                 .add(ModItems.COPPER_BUCKET.get())
                 .add(ModItems.COPPER_WATER_BUCKET.get())
                 .add(ModItems.COPPER_LAVA_BUCKET.get())
@@ -58,34 +58,34 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.COPPER_AXOLOTL_BUCKET.get())
                 .add(ModItems.COPPER_TADPOLE_BUCKET.get());
 
-        getOrCreateTagBuilder(ModItemTags.COPPER_NUGGETS)
+        valueLookupBuilder(ModItemTags.COPPER_NUGGETS)
                 .add(ModItems.COPPER_NUGGET.get());
 
-        getOrCreateTagBuilder(NemosItemTags.SHEARS)
+        valueLookupBuilder(NemosItemTags.SHEARS)
                 .add(ModItems.COPPER_SHEARS.get());
 
-        getOrCreateTagBuilder(NemosItemTags.EMPTY_BUCKETS)
+        valueLookupBuilder(NemosItemTags.EMPTY_BUCKETS)
                 .add(ModItems.COPPER_BUCKET.get());
 
-        getOrCreateTagBuilder(NemosItemTags.WATER_BUCKETS)
+        valueLookupBuilder(NemosItemTags.WATER_BUCKETS)
                 .add(ModItems.COPPER_WATER_BUCKET.get());
 
-        getOrCreateTagBuilder(NemosItemTags.LAVA_BUCKETS)
+        valueLookupBuilder(NemosItemTags.LAVA_BUCKETS)
                 .add(ModItems.COPPER_LAVA_BUCKET.get());
 
-        getOrCreateTagBuilder(NemosItemTags.POWDER_SNOW_BUCKETS)
+        valueLookupBuilder(NemosItemTags.POWDER_SNOW_BUCKETS)
                 .add(ModItems.COPPER_POWDER_SNOW_BUCKET.get());
 
-        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+        valueLookupBuilder(ItemTags.FOOT_ARMOR)
                 .add(ModItems.COPPER_BOOTS.get());
 
-        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+        valueLookupBuilder(ItemTags.LEG_ARMOR)
                 .add(ModItems.COPPER_LEGGINGS.get());
 
-        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+        valueLookupBuilder(ItemTags.CHEST_ARMOR)
                 .add(ModItems.COPPER_CHESTPLATE.get());
 
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+        valueLookupBuilder(ItemTags.HEAD_ARMOR)
                 .add(ModItems.COPPER_HELMET.get());
     }
 }

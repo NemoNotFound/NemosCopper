@@ -2,7 +2,7 @@ package com.nemonotfound.nemos.copper.core.dispenser;
 
 import com.nemonotfound.nemos.copper.item.ModItems;
 import com.nemonotfound.nemos.copper.world.entity.ModEntityTypes;
-import com.nemonotfound.nemos.tags.interfaces.CustomBucketPickup;
+import com.devnemo.nemos.tags.interfaces.CustomBucketPickup;
 import net.minecraft.core.dispenser.*;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.Item;

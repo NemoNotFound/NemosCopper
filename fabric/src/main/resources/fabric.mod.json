@@ -34,7 +34,7 @@
         "fabric-api": "*",
         "nemos_tags": ">=${nemos_tags_version}",
         "minecraft": [
-            ">=1.21.5"
+            ">=${minecraft_version}"
         ],
         "java": ">=${java_version}"
     },

@@ -39,10 +39,8 @@ public class CopperLavaCauldronBlock extends AbstractCauldronBlock {
 
     @Override
     protected void entityInside(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Entity entity, @NotNull InsideBlockEffectApplier insideBlockEffectApplier) {
-        if (this.isEntityInsideContent(blockState, blockPos, entity)) {
             entity.lavaIgnite();
             entity.lavaHurt();
-        }
     }
 
     @Override

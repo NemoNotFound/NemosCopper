@@ -6,10 +6,10 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.furnace.FurnaceFuelBurnTimeEvent;
 
-@EventBusSubscriber(modid = Constants.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = Constants.MOD_ID)
 public class GameEvents {
 
-    @SubscribeEvent()
+    @SubscribeEvent
     private static void addCustomFuels(final FurnaceFuelBurnTimeEvent event) {
         var itemStack = event.getItemStack();
 
