@@ -16,13 +16,13 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.nemonotfound.nemos.copper.NemosCopperFabric"
+            "com.devnemo.nemos.copper.NemosCopperFabric"
         ],
         "client": [
-            "com.nemonotfound.nemos.copper.NemosCopperClientFabric"
+            "com.devnemo.nemos.copper.NemosCopperClientFabric"
         ],
         "fabric-datagen": [
-            "com.nemonotfound.nemos.copper.DataGenerator"
+            "com.devnemo.nemos.copper.DataGenerator"
         ]
     },
     "mixins": [

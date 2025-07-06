@@ -1,4 +1,8 @@
-# Changelog v1.5.2
+# Changelog v2.0
 
-## Fixes
-- Copper armor can be enchanted in the enchanting table now
+## Additions
+- Added copper hopper
+
+## Breaking Change
+- Refactored internal code structure
+    - **For Developers:** Package naming changed from `nemonotfound` to `devnemo`
