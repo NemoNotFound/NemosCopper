@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class NemosCopperClientFabric implements ClientModInitializer {
 
@@ -26,7 +25,5 @@ public class NemosCopperClientFabric implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_CHAIN.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_BARS.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_HOPPER.get(), RenderType.cutoutMipped());
-
-        BlockEntityType.HOPPER.addSupportedBlock(ModBlocks.COPPER_HOPPER.get());
     }
 }

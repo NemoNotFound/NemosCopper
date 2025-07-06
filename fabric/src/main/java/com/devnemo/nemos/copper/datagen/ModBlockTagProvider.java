@@ -31,7 +31,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.COPPER_LANTERN.get())
                 .add(ModBlocks.COPPER_SOUL_LANTERN.get())
-                .add(ModBlocks.COPPER_CHAIN.get());
+                .add(ModBlocks.COPPER_CHAIN.get())
+                .add(ModBlocks.COPPER_HOPPER.get());
 
         getOrCreateTagBuilder(BlockTags.CAULDRONS)
                 .add(ModBlocks.COPPER_CAULDRON.get())
