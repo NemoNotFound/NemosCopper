@@ -20,7 +20,7 @@
               "source": "block_entity"
             }
           ],
-          "name": "minecraft:hopper"
+          "name": "nemos_copper:copper_hopper"
         }
       ],
       "rolls": 1.0

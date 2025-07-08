@@ -1,5 +1,4 @@
-# Changelog v2.0.1
+# Changelog v2.0.2
 
 ## Fixes
-- Copper hopper doesn't work on server
-- Copper hopper can't be broken faster with pickaxe
+- Copper hopper doesn't get dropped
