@@ -4,7 +4,6 @@ import com.devnemo.nemos.copper.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -28,6 +27,6 @@ public class BlockLootTableProvider extends FabricBlockLootTableProvider {
         this.dropOther(ModBlocks.COPPER_LAVA_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
         this.dropOther(ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
         this.dropSelf(ModBlocks.COPPER_BARS.get());
-        this.add(Blocks.HOPPER, this::createNameableBlockEntityTable);
+        this.add(ModBlocks.COPPER_HOPPER.get(), this::createNameableBlockEntityTable);
     }
 }
