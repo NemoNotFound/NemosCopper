@@ -18,7 +18,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import static com.devnemo.nemos.copper.Constants.MOD_ID;
 
 @Mod(MOD_ID)
-@EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = MOD_ID)
 public class NemosCopperNeoForge {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MOD_ID);
