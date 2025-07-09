@@ -1,4 +1,4 @@
-# Changelog v2.0.2
+# Changelog v2.0.2.1
 
 ## Fixes
-- Copper hopper doesn't get dropped
+- Fixed instant crash when placing Copper Hopper on NeoForge
