@@ -3,7 +3,7 @@
 
 # Description
 Nemo's Copper adds more blocks and items out of copper! <br>
-For more information and a list of everything added check the [wiki](https://github.com/NemoNotFound/NemosCopper/wiki).
+For more information and a list of everything added check the [wiki](https://wiki.devnemo.com/projects/minecraft-mods/nemos-copper/general).
 <br><br>
 
 # Downloads
