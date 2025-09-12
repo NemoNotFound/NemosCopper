@@ -1,4 +1,4 @@
-# Changelog v2.0.2.1
+# Changelog v2.0.3
 
 ## Fixes
-- Fixed instant crash when placing Copper Hopper on NeoForge
+- Fixed crash due to render issues with copper rails
