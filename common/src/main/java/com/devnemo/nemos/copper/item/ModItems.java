@@ -98,7 +98,7 @@ public class ModItems {
                     .component(DataComponents.BREAK_SOUND, SoundEvents.SHIELD_BREAK)
     );
     public static final Supplier<Item> COPPER_BARS = registerBlockItem("copper_bars", ModBlocks.COPPER_BARS);
-    public static final Supplier<Item> COPPER_HOPPER = registerBlockItem("copper_hopper", ModBlocks.COPPER_HOPPER, new Item.Properties().useBlockDescriptionPrefix().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
+    public static final Supplier<Item> COPPER_HOPPER = registerBlockItem("copper_hopper", ModBlocks.COPPER_HOPPER, new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
 
     public static void init() {}
 
