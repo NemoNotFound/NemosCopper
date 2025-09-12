@@ -18,10 +18,10 @@ For more information and a list of everything added check the [wiki](https://wik
 
 # Support Me
 I love to create mods for Minecraft and wish to live off it one day, so I hope you like what I do. <br>
-Either way feel free to give me your feedback and suggestions, either on my Discord or the [discussions](https://github.com/NemoNotFound/NemosCopper/discussions/) :)
+Either way feel free to give me your feedback and suggestions, either on my Discord or the [discussions](https://github.com/NemoOnGH/NemosCopper/discussions/) :)
 <br><br>
 
-[![ko-fi donation](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nemonotfound)
+[![ko-fi donation](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.devnemo.com)
 <br><br>
 
 # Get a Minecraft Server
