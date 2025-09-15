@@ -1,4 +1,4 @@
-# Changelog v2.0.3
+# Changelog v2.0.4
 
 ## Fixes
-- Fixed crash due to render issues with copper rails
+- Added missing tags from Nemo's Tags, which caused some problems
