@@ -1,6 +1,6 @@
 package com.devnemo.nemos.copper.helper;
 
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import com.devnemo.nemos.copper.tag.ModBlockTags;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvents;
@@ -27,7 +27,7 @@ public class CauldronInteractionHelper {
 
         Map<Item, CauldronInteraction> waterMap = CauldronInteraction.WATER.map();
         waterMap.put(
-                ModItems.COPPER_BUCKET.get(),
+                CopperItems.COPPER_BUCKET.get(),
                 (blockState, level, blockPos, player, hand, itemStack) -> CauldronInteraction.fillBucket(
                         blockState,
                         level,
@@ -35,7 +35,7 @@ public class CauldronInteractionHelper {
                         player,
                         hand,
                         itemStack,
-                        new ItemStack(ModItems.COPPER_WATER_BUCKET.get()),
+                        new ItemStack(CopperItems.COPPER_WATER_BUCKET.get()),
                         state -> state.getValue(LayeredCauldronBlock.LEVEL) == 3,
                         SoundEvents.BUCKET_FILL
                 )
@@ -44,7 +44,7 @@ public class CauldronInteractionHelper {
 
         Map<Item, CauldronInteraction> lavaMap = CauldronInteraction.LAVA.map();
         lavaMap.put(
-                ModItems.COPPER_BUCKET.get(),
+                CopperItems.COPPER_BUCKET.get(),
                 (blockState, level, blockPos, player, hand, itemStack) -> CauldronInteraction.fillBucket(
                         blockState,
                         level,
@@ -52,7 +52,7 @@ public class CauldronInteractionHelper {
                         player,
                         hand,
                         itemStack,
-                        new ItemStack(ModItems.COPPER_LAVA_BUCKET.get()),
+                        new ItemStack(CopperItems.COPPER_LAVA_BUCKET.get()),
                         state -> true,
                         SoundEvents.BUCKET_FILL_LAVA
                 )
@@ -61,7 +61,7 @@ public class CauldronInteractionHelper {
 
         Map<Item, CauldronInteraction> powderSnowMap = CauldronInteraction.POWDER_SNOW.map();
         powderSnowMap.put(
-                ModItems.COPPER_BUCKET.get(),
+                CopperItems.COPPER_BUCKET.get(),
                 (blockState, level, blockPos, player, hand, itemStack) -> CauldronInteraction.fillBucket(
                         blockState,
                         level,
@@ -69,7 +69,7 @@ public class CauldronInteractionHelper {
                         player,
                         hand,
                         itemStack,
-                        new ItemStack(ModItems.COPPER_POWDER_SNOW_BUCKET.get()),
+                        new ItemStack(CopperItems.COPPER_POWDER_SNOW_BUCKET.get()),
                         state -> state.getValue(LayeredCauldronBlock.LEVEL) == 3,
                         SoundEvents.BUCKET_FILL_POWDER_SNOW
                 )
@@ -79,8 +79,8 @@ public class CauldronInteractionHelper {
     }
 
     private static void nemosCopper$addDefaultInteractions(Map<Item, CauldronInteraction> interactionsMap) {
-        interactionsMap.put(ModItems.COPPER_LAVA_BUCKET.get(), CauldronInteraction::fillLavaInteraction);
-        interactionsMap.put(ModItems.COPPER_WATER_BUCKET.get(), CauldronInteraction::fillWaterInteraction);
-        interactionsMap.put(ModItems.COPPER_POWDER_SNOW_BUCKET.get(), CauldronInteraction::fillPowderSnowInteraction);
+        interactionsMap.put(CopperItems.COPPER_LAVA_BUCKET.get(), CauldronInteraction::fillLavaInteraction);
+        interactionsMap.put(CopperItems.COPPER_WATER_BUCKET.get(), CauldronInteraction::fillWaterInteraction);
+        interactionsMap.put(CopperItems.COPPER_POWDER_SNOW_BUCKET.get(), CauldronInteraction::fillPowderSnowInteraction);
     }
 }

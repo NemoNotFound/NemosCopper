@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 import static net.minecraft.world.level.block.Blocks.*;
 
-public class ModBlocks {
+public class CopperBlocks {
 
     public static final Supplier<Block> COPPER_RAIL = register(
             "copper_rail",

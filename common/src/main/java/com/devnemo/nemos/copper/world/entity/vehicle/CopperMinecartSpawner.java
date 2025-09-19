@@ -1,6 +1,6 @@
 package com.devnemo.nemos.copper.world.entity.vehicle;
 
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.MinecartSpawner;
 import net.minecraft.world.item.Item;
@@ -16,11 +16,11 @@ public class CopperMinecartSpawner extends MinecartSpawner {
 
     @Override
     protected @NotNull Item getDropItem() {
-        return ModItems.COPPER_MINECART.get();
+        return CopperItems.COPPER_MINECART.get();
     }
 
     @Override
     public @NotNull ItemStack getPickResult() {
-        return new ItemStack(ModItems.COPPER_MINECART.get());
+        return new ItemStack(CopperItems.COPPER_MINECART.get());
     }
 }

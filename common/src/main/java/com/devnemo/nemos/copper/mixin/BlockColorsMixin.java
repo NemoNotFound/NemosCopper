@@ -1,7 +1,7 @@
 package com.devnemo.nemos.copper.mixin;
 
+import com.devnemo.nemos.copper.block.CopperBlocks;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.devnemo.nemos.copper.block.ModBlocks;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +19,7 @@ public class BlockColorsMixin {
                         blockAndTintGetter != null &&
                                 blockPos != null ?
                                 BiomeColors.getAverageWaterColor(blockAndTintGetter, blockPos) : -1,
-                ModBlocks.COPPER_WATER_CAULDRON.get()
+                CopperBlocks.COPPER_WATER_CAULDRON.get()
         );
     }
 }

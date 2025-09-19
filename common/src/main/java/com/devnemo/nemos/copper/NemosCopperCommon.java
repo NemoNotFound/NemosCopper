@@ -1,8 +1,8 @@
 package com.devnemo.nemos.copper;
 
-import com.devnemo.nemos.copper.block.ModBlocks;
+import com.devnemo.nemos.copper.block.CopperBlocks;
 import com.devnemo.nemos.copper.item.ModCreativeModeTabs;
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import com.devnemo.nemos.copper.platform.RegistryHelper;
 import com.devnemo.nemos.copper.tag.ModBlockTags;
 import com.devnemo.nemos.copper.tag.ModItemTags;
@@ -19,9 +19,9 @@ public class NemosCopperCommon {
 
         ModItemTags.init();
         ModBlockTags.init();
-        ModBlocks.init();
+        CopperBlocks.init();
         ModEntityTypes.init();
-        ModItems.init();
+        CopperItems.init();
         ModCreativeModeTabs.init();
     }
 }

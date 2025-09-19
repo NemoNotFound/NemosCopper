@@ -1,6 +1,6 @@
 package com.devnemo.nemos.copper.datagen;
 
-import com.devnemo.nemos.copper.block.ModBlocks;
+import com.devnemo.nemos.copper.block.CopperBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup;
@@ -15,18 +15,18 @@ public class BlockLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        this.dropSelf(ModBlocks.COPPER_RAIL.get());
-        this.dropSelf(ModBlocks.COPPER_ACTIVATOR_RAIL.get());
-        this.dropSelf(ModBlocks.COPPER_DETECTOR_RAIL.get());
-        this.dropSelf(ModBlocks.COPPER_POWERED_RAIL.get());
-        this.dropSelf(ModBlocks.COPPER_CHAIN.get());
-        this.add(ModBlocks.COPPER_LANTERN.get(), this::createSingleItemTable);
-        this.add(ModBlocks.COPPER_SOUL_LANTERN.get(), this::createSingleItemTable);
-        this.dropSelf(ModBlocks.COPPER_CAULDRON.get());
-        this.dropOther(ModBlocks.COPPER_WATER_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
-        this.dropOther(ModBlocks.COPPER_LAVA_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
-        this.dropOther(ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get(), ModBlocks.COPPER_CAULDRON.get());
-        this.dropSelf(ModBlocks.COPPER_BARS.get());
-        this.add(ModBlocks.COPPER_HOPPER.get(), this::createNameableBlockEntityTable);
+        this.dropSelf(CopperBlocks.COPPER_RAIL.get());
+        this.dropSelf(CopperBlocks.COPPER_ACTIVATOR_RAIL.get());
+        this.dropSelf(CopperBlocks.COPPER_DETECTOR_RAIL.get());
+        this.dropSelf(CopperBlocks.COPPER_POWERED_RAIL.get());
+        this.dropSelf(CopperBlocks.COPPER_CHAIN.get());
+        this.add(CopperBlocks.COPPER_LANTERN.get(), this::createSingleItemTable);
+        this.add(CopperBlocks.COPPER_SOUL_LANTERN.get(), this::createSingleItemTable);
+        this.dropSelf(CopperBlocks.COPPER_CAULDRON.get());
+        this.dropOther(CopperBlocks.COPPER_WATER_CAULDRON.get(), CopperBlocks.COPPER_CAULDRON.get());
+        this.dropOther(CopperBlocks.COPPER_LAVA_CAULDRON.get(), CopperBlocks.COPPER_CAULDRON.get());
+        this.dropOther(CopperBlocks.COPPER_POWDER_SNOW_CAULDRON.get(), CopperBlocks.COPPER_CAULDRON.get());
+        this.dropSelf(CopperBlocks.COPPER_BARS.get());
+        this.add(CopperBlocks.COPPER_HOPPER.get(), this::createNameableBlockEntityTable);
     }
 }

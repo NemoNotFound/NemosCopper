@@ -1,6 +1,6 @@
 package com.devnemo.nemos.copper.block;
 
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.item.Item;
@@ -19,11 +19,11 @@ public class LayeredCopperCauldronBlock extends LayeredCauldronBlock {
 
     @Override
     protected @NotNull ItemStack getCloneItemStack(@NotNull LevelReader levelReader, @NotNull BlockPos blockPos, @NotNull BlockState blockState, boolean p_387375_) {
-        return new ItemStack(ModItems.COPPER_CAULDRON.get());
+        return new ItemStack(CopperItems.COPPER_CAULDRON.get());
     }
 
     @Override
     public @NotNull Item asItem() {
-        return ModItems.COPPER_CAULDRON.get();
+        return CopperItems.COPPER_CAULDRON.get();
     }
 }

@@ -1,7 +1,7 @@
 package com.devnemo.nemos.copper.mixin;
 
 import com.devnemo.nemos.copper.interfaces.CopperBucketItemStackGetter;
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -26,7 +26,7 @@ public interface BucketableMixin {
     private static <T extends LivingEntity & Bucketable> void bucketMobPickup(Player player, InteractionHand hand, T entity, CallbackInfoReturnable<Optional<InteractionResult>> cir) {
         ItemStack itemstack = player.getItemInHand(hand);
 
-        if (itemstack.getItem() == ModItems.COPPER_WATER_BUCKET.get() && entity.isAlive()) {
+        if (itemstack.getItem() == CopperItems.COPPER_WATER_BUCKET.get() && entity.isAlive()) {
             entity.playSound(entity.getPickupSound(), 1.0F, 1.0F);
             ItemStack bucketItemStack = ((CopperBucketItemStackGetter) entity).nemosCopper$getCopperBucketItemStack();
             entity.saveToBucketTag(bucketItemStack);

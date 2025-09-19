@@ -37,10 +37,10 @@ public class CopperCauldronBlock extends AbstractCauldronBlock {
     public void handlePrecipitation(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, Biome.@NotNull Precipitation precipitation) {
         if (shouldHandlePrecipitation(level, precipitation)) {
             if (precipitation == Biome.Precipitation.RAIN) {
-                level.setBlockAndUpdate(blockPos, ModBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState());
+                level.setBlockAndUpdate(blockPos, CopperBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState());
                 level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
             } else if (precipitation == Biome.Precipitation.SNOW) {
-                level.setBlockAndUpdate(blockPos, ModBlocks.COPPER_POWDER_SNOW_CAULDRON.get().defaultBlockState());
+                level.setBlockAndUpdate(blockPos, CopperBlocks.COPPER_POWDER_SNOW_CAULDRON.get().defaultBlockState());
                 level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
             }
         }
@@ -62,12 +62,12 @@ public class CopperCauldronBlock extends AbstractCauldronBlock {
     @Override
     protected void receiveStalactiteDrip(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Fluid fluid) {
         if (fluid == Fluids.WATER) {
-            BlockState newBlockState = ModBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState();
+            BlockState newBlockState = CopperBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState();
             level.setBlockAndUpdate(blockPos, newBlockState);
             level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(newBlockState));
             level.levelEvent(1047, blockPos, 0);
         } else if (fluid == Fluids.LAVA) {
-            BlockState newBlockState = ModBlocks.COPPER_LAVA_CAULDRON.get().defaultBlockState();
+            BlockState newBlockState = CopperBlocks.COPPER_LAVA_CAULDRON.get().defaultBlockState();
             level.setBlockAndUpdate(blockPos, newBlockState);
             level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(newBlockState));
             level.levelEvent(1046, blockPos, 0);

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_minecart": {
+    "has_copper_minecart": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:minecart"
+            "items": "nemos_copper:copper_minecart"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nemos_copper:copper_hopper_minecart"
+        "recipe": "nemos_copper:copper_hopper_copper_minecart"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_minecart"
+      "has_copper_minecart"
     ]
   ],
   "rewards": {
     "recipes": [
-      "nemos_copper:copper_hopper_minecart"
+      "nemos_copper:copper_hopper_copper_minecart"
     ]
   }
 }

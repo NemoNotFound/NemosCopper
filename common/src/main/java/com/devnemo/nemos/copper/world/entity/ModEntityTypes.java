@@ -35,8 +35,22 @@ public class ModEntityTypes {
                     .passengerAttachments(0.1875F)
                     .clientTrackingRange(8));
 
-    public static final Supplier<EntityType<CopperMinecartHopper>> COPPER_HOPPER_MINECART = register("copper_hopper_minecart",
+    public static final Supplier<EntityType<CopperMinecartHopper>> HOPPER_COPPER_MINECART = register("hopper_copper_minecart",
             EntityType.Builder.of(CopperMinecartHopper::new, MobCategory.MISC)
+                    .noLootTable()
+                    .sized(0.98F, 0.7F)
+                    .passengerAttachments(0.1875F)
+                    .clientTrackingRange(8));
+
+    public static final Supplier<EntityType<CopperMinecartCopperHopper>> COPPER_HOPPER_COPPER_MINECART = register("copper_hopper_copper_minecart",
+            EntityType.Builder.of(CopperMinecartCopperHopper::new, MobCategory.MISC)
+                    .noLootTable()
+                    .sized(0.98F, 0.7F)
+                    .passengerAttachments(0.1875F)
+                    .clientTrackingRange(8));
+
+    public static final Supplier<EntityType<MinecartCopperHopper>> COPPER_HOPPER_MINECART = register("copper_hopper_minecart",
+            EntityType.Builder.of(MinecartCopperHopper::new, MobCategory.MISC)
                     .noLootTable()
                     .sized(0.98F, 0.7F)
                     .passengerAttachments(0.1875F)

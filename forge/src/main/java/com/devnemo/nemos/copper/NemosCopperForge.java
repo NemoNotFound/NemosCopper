@@ -1,16 +1,17 @@
 package com.devnemo.nemos.copper;
 
-import com.devnemo.nemos.copper.block.ModBlocks;
+import com.devnemo.nemos.copper.block.CopperBlocks;
 import com.devnemo.nemos.copper.client.renderer.entity.CopperMinecartRenderer;
-import com.devnemo.nemos.copper.core.dispenser.ModDispenseItemBehavior;
+import com.devnemo.nemos.copper.core.dispenser.CopperDispenseItemBehavior;
 import com.devnemo.nemos.copper.helper.CauldronInteractionHelper;
 import com.devnemo.nemos.copper.helper.ItemReplacementHelper;
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import com.devnemo.nemos.copper.world.entity.ModEntityTypes;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.MinecartRenderer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
@@ -48,7 +49,7 @@ public class NemosCopperForge {
 
     @SubscribeEvent(priority = Priority.LOWEST)
     public static void registerDispenseBehavior(final FMLCommonSetupEvent event) {
-        event.enqueueWork(ModDispenseItemBehavior::bootstrap);
+        event.enqueueWork(CopperDispenseItemBehavior::bootstrap);
         event.enqueueWork(CauldronInteractionHelper::addCopperBucketInteractions);
         event.enqueueWork(ItemReplacementHelper::addToItemReplacementMaps);
     }
@@ -58,21 +59,23 @@ public class NemosCopperForge {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_ACTIVATOR_RAIL.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_POWERED_RAIL.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_DETECTOR_RAIL.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_RAIL.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_LANTERN.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_CHAIN.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_BARS.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_HOPPER.get(), ChunkSectionLayer.CUTOUT_MIPPED);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_ACTIVATOR_RAIL.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_POWERED_RAIL.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_DETECTOR_RAIL.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_RAIL.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_CHAIN.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_BARS.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(CopperBlocks.COPPER_HOPPER.get(), ChunkSectionLayer.CUTOUT_MIPPED);
 
             EntityRenderers.register(ModEntityTypes.COPPER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.MINECART));
             EntityRenderers.register(ModEntityTypes.COPPER_CHEST_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.CHEST_MINECART));
             EntityRenderers.register(ModEntityTypes.COPPER_COMMAND_BLOCK_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.COMMAND_BLOCK_MINECART));
             EntityRenderers.register(ModEntityTypes.COPPER_FURNACE_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.FURNACE_MINECART));
-            EntityRenderers.register(ModEntityTypes.COPPER_HOPPER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.HOPPER_MINECART));
+            EntityRenderers.register(ModEntityTypes.HOPPER_COPPER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.HOPPER_MINECART));
+            EntityRenderers.register(ModEntityTypes.COPPER_HOPPER_COPPER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.HOPPER_MINECART));
+            EntityRenderers.register(ModEntityTypes.COPPER_HOPPER_MINECART.get(), context -> new MinecartRenderer(context, ModelLayers.HOPPER_MINECART));
             EntityRenderers.register(ModEntityTypes.COPPER_SPAWNER_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.SPAWNER_MINECART));
             EntityRenderers.register(ModEntityTypes.COPPER_TNT_MINECART.get(), context -> new CopperMinecartRenderer(context, ModelLayers.TNT_MINECART));
         }
@@ -85,7 +88,7 @@ public class NemosCopperForge {
         public static void addCustomFuels(FurnaceFuelBurnTimeEvent event) {
             var itemStack = event.getItemStack();
 
-            if (itemStack.is(ModItems.COPPER_LAVA_BUCKET.get())) {
+            if (itemStack.is(CopperItems.COPPER_LAVA_BUCKET.get())) {
                 event.setBurnTime(20000);
             }
         }

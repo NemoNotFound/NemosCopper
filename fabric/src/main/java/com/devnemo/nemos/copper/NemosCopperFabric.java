@@ -1,10 +1,10 @@
 package com.devnemo.nemos.copper;
 
-import com.devnemo.nemos.copper.block.ModBlocks;
-import com.devnemo.nemos.copper.core.dispenser.ModDispenseItemBehavior;
+import com.devnemo.nemos.copper.block.CopperBlocks;
+import com.devnemo.nemos.copper.core.dispenser.CopperDispenseItemBehavior;
 import com.devnemo.nemos.copper.helper.CauldronInteractionHelper;
 import com.devnemo.nemos.copper.helper.ItemReplacementHelper;
-import com.devnemo.nemos.copper.item.ModItems;
+import com.devnemo.nemos.copper.item.CopperItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -15,12 +15,12 @@ public class NemosCopperFabric implements ModInitializer {
     public void onInitialize() {
         NemosCopperCommon.init();
         FuelRegistryEvents.BUILD.register((builder, context) ->
-                builder.add(ModItems.COPPER_LAVA_BUCKET.get(), 20000));
+                builder.add(CopperItems.COPPER_LAVA_BUCKET.get(), 20000));
 
-        ModDispenseItemBehavior.bootstrap();
+        CopperDispenseItemBehavior.bootstrap();
         CauldronInteractionHelper.addCopperBucketInteractions();
         ItemReplacementHelper.addToItemReplacementMaps();
 
-        BlockEntityType.HOPPER.addSupportedBlock(ModBlocks.COPPER_HOPPER.get());
+        BlockEntityType.HOPPER.addSupportedBlock(CopperBlocks.COPPER_HOPPER.get());
     }
 }

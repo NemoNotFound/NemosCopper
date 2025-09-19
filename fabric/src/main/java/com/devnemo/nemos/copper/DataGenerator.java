@@ -1,6 +1,9 @@
 package com.devnemo.nemos.copper;
 
 import com.devnemo.nemos.copper.datagen.*;
+import com.devnemo.nemos.copper.datagen.lang.BrazilianPortugueseLanguageProvider;
+import com.devnemo.nemos.copper.datagen.lang.EnglishLanguageProvider;
+import com.devnemo.nemos.copper.datagen.lang.GermanLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

@@ -1,7 +1,7 @@
 package com.devnemo.nemos.copper;
 
 
-import com.devnemo.nemos.copper.block.ModBlocks;
+import com.devnemo.nemos.copper.block.CopperBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,6 +37,6 @@ public class NemosCopperNeoForge {
 
     @SubscribeEvent
     public static void onBlockEntityTypeAddBlockEvent(BlockEntityTypeAddBlocksEvent event) {
-        event.modify(BlockEntityType.HOPPER, ModBlocks.COPPER_HOPPER.get());
+        event.modify(BlockEntityType.HOPPER, CopperBlocks.COPPER_HOPPER.get());
     }
 }

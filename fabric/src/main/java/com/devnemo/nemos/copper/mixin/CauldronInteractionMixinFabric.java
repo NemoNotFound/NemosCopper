@@ -2,7 +2,7 @@ package com.devnemo.nemos.copper.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.devnemo.nemos.copper.block.ModBlocks;
+import com.devnemo.nemos.copper.block.CopperBlocks;
 import com.devnemo.nemos.copper.tag.ModBlockTags;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,7 +15,7 @@ public interface CauldronInteractionMixinFabric {
     @ModifyExpressionValue(method = "method_32222", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
     private static BlockState bootstrap(BlockState original, @Local(argsOnly = true) BlockState blockState) {
         if (blockState.is(ModBlockTags.COPPER_CAULDRONS)) {
-            return ModBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState();
+            return CopperBlocks.COPPER_WATER_CAULDRON.get().defaultBlockState();
         }
 
         return original;

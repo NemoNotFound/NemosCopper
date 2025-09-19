@@ -1,4 +1,8 @@
-# Changelog v2.0.4
+# Changelog v2.1
 
-## Fixes
-- Added missing tags from Nemo's Tags, which caused some problems
+## Breaking Changes
+- Changed id of Copper Minecart with Hopper
+
+## Additions
+- Added Copper Minecart with Copper Hopper
+- Added Minecart with Copper Hopper
