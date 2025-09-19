@@ -1,4 +1,4 @@
-# Changelog v2.1
+# Changelog v3.0
 
 ## Breaking Changes
 - Changed id of Copper Minecart with Hopper
